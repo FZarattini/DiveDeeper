@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 613220056058214928}
   - component: {fileID: 2818998950557946541}
   - component: {fileID: 4722323624940418586}
-  - component: {fileID: 1813409051799267928}
   - component: {fileID: 525136561678048872}
   - component: {fileID: 6149150303332863655}
   - component: {fileID: 5555088816985510960}
@@ -68,7 +67,7 @@ Transform:
   m_Children:
   - {fileID: 8737498139494768363}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &613220056058214928
 Rigidbody2D:
@@ -124,19 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72686a00dc3f2a044adbae44d7738167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1813409051799267928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2593012902573373132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa69a559a3cb2a4faa0decb654aa33b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerInventory: {fileID: 11400000, guid: 0db21540cbff42f41bc73fe6f961a207, type: 2}
 --- !u!114 &525136561678048872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,10 +139,10 @@ MonoBehaviour:
   _animator: {fileID: 2814870717246092171}
   _spriteRenderer: {fileID: 4778001400292561095}
   _rigidBody: {fileID: 613220056058214928}
-  _playerEquipmentController: {fileID: 6149150303332863655}
   currency: 0
   defaultState: 0
   currentState: 0
+  _playerEquipmentController: {fileID: 6149150303332863655}
 --- !u!114 &6149150303332863655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64c8e5e0898b4344ba65ea5ff35eb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hatAnchor: {fileID: 5400490966143045342}
-  _bodyAnchor: {fileID: 7668683970457797530}
+  _hatObj: {fileID: 0}
+  _bodyObj: {fileID: 0}
   _hatAnimator: {fileID: 0}
   _bodyAnimator: {fileID: 0}
 --- !u!61 &5555088816985510960
@@ -322,15 +308,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 497991315
+  m_SortingLayerID: -363362617
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -927406940, guid: b025a83e848a73b4693ed3200949b5fd, type: 3}
+  m_Sprite: {fileID: 1402769665, guid: 6f7b9f7ebfb750a43a59cc9fedd1ea88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
