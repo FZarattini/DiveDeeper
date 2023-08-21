@@ -169,7 +169,6 @@ public class PlayerController : MonoBehaviour
         _playerEquipmentController.ChangeClothesAnimatorState(newState);
 
         currentState = newState;
-
     }
 
     // Flips the sprite of the Character using the absolute values of the scale instead of 1f in case scale values need to be changed in the future
