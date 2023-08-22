@@ -50,9 +50,18 @@ TagManager:
   - name: Characters
     uniqueID: 158784497
     locked: 0
+  - name: Buildings
+    uniqueID: 327141683
+    locked: 0
+  - name: Trees
+    uniqueID: 1610569469
+    locked: 0
   - name: Player
     uniqueID: 3931604679
     locked: 0
-  - name: Buildings
-    uniqueID: 327141683
+  - name: Clothes
+    uniqueID: 776768489
+    locked: 0
+  - name: Above Player
+    uniqueID: 879319829
     locked: 0

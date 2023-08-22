@@ -9,8 +9,8 @@ public class PlayerEquipmentController : MonoBehaviour
     [Title("References")]
     [SerializeField, ReadOnly] GameObject _hatObj;
     [SerializeField, ReadOnly] GameObject _bodyObj;
-    [SerializeField, ReadOnly] Animator _hatAnimator = null;
-    [SerializeField, ReadOnly] Animator _bodyAnimator = null;
+    [SerializeField] Animator _hatAnimator = null;
+    [SerializeField] Animator _bodyAnimator = null;
 
 
     // Changes clothes animator state based on the player state
