@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static PlayerController;
 
-public class PlayerEquipmentController : MonoBehaviour
+public class CharacterEquipmentController : MonoBehaviour
 {
     [Title("References")]
     [SerializeField, ReadOnly] GameObject _hatObj;
@@ -14,7 +14,7 @@ public class PlayerEquipmentController : MonoBehaviour
 
 
     // Changes clothes animator state based on the player state
-    public void ChangeClothesAnimatorState(PlayerAnimationStates animationState)
+    public void ChangeClothesAnimatorState(CharacterAnimationStates animationState)
     {
         if(_hatAnimator != null)
             _hatAnimator.Play(animationState.ToString());
