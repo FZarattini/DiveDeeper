@@ -8,13 +8,12 @@ public class PlayerInteractionHandler : MonoBehaviour
 {
     [SerializeField] IInteractables currentInteractable = null;
 
-
     // Saves the collided interactable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IInteractables interactable = collision.GetComponent<IInteractables>();
 
-        if(interactable != null)
+        if (interactable != null)
             currentInteractable = interactable;
     }
 
@@ -26,7 +25,8 @@ public class PlayerInteractionHandler : MonoBehaviour
     // Executes interaction behaviour
     public void Interact()
     {
-        if (currentInteractable == null) return;
+        if (currentInteractable == null)
+            return;
 
         currentInteractable.Interact();
     }
