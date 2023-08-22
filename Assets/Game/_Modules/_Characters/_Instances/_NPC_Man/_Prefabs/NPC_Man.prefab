@@ -10,8 +10,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 34905531721264681, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: NPC_Man
       objectReference: {fileID: 0}
+    - target: {fileID: 4332312891065761854, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2121896922, guid: 250492a64806d7e408e19961567440cc, type: 3}
+    - target: {fileID: 5649420194833921000, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ce1f9cfc718bd804a94e5a6487524bf8, type: 2}
     - target: {fileID: 6654032089104623918, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -56,6 +64,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7372068415444777043, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -434574651, guid: 5af691a73b968514a8af328c940cc3d0, type: 3}
+    - target: {fileID: 8926762914493148466, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 41c550415a5848b47a1e1669153e07a8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
