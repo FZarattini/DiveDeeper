@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using Doozy.Runtime.Colors.Models;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public int Currency => currency;
 
+    public Vector2 PushDirection;
+
     public enum PlayerAnimationStates
     {
         IDLE_UP,
@@ -32,6 +35,9 @@ public class PlayerController : MonoBehaviour
         WALK_UP,
         WALK_HORIZONTAL,
         WALK_DOWN,
+        PUSH_UP,
+        PUSH_HORIZONTAL,
+        PUSH_DOWN,
     }
 
     private void OnEnable()
@@ -67,7 +73,15 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            HandleNewMovement();
+            if (PushDirection != Vector2.zero)
+            {
+                HandlePushingAnimation();
+            }
+            else
+            {
+                HandleNewMovement();
+            }
+
             SetDirection();
         }
 
@@ -84,14 +98,17 @@ public class PlayerController : MonoBehaviour
                 return;
 
             case PlayerAnimationStates.WALK_HORIZONTAL:
+            case PlayerAnimationStates.PUSH_HORIZONTAL:
                 ChangeAnimatorState(PlayerAnimationStates.IDLE_HORIZONTAL);
                 break;
 
             case PlayerAnimationStates.WALK_UP:
+            case PlayerAnimationStates.PUSH_UP:
                 ChangeAnimatorState(PlayerAnimationStates.IDLE_UP);
                 break;
 
             case PlayerAnimationStates.WALK_DOWN:
+            case PlayerAnimationStates.PUSH_DOWN:
                 ChangeAnimatorState(PlayerAnimationStates.IDLE_DOWN);
                 break;
 
@@ -108,18 +125,28 @@ public class PlayerController : MonoBehaviour
         switch (currentState)
         {
             case PlayerAnimationStates.WALK_HORIZONTAL:
+            case PlayerAnimationStates.PUSH_HORIZONTAL:
 
                 if (_rigidBody.velocity.x == 0 && _rigidBody.velocity.y != 0)
                 {
                     if (_rigidBody.velocity.y > 0)
+                    {
                         ChangeAnimatorState(PlayerAnimationStates.WALK_UP);
+                    }
                     else
+                    {
                         ChangeAnimatorState(PlayerAnimationStates.WALK_DOWN);
+                    }
+                }
+                else
+                {
+                    ChangeAnimatorState(PlayerAnimationStates.WALK_HORIZONTAL);
                 }
 
                 break;
 
             case PlayerAnimationStates.WALK_UP:
+            case PlayerAnimationStates.PUSH_UP:
 
                 if (_rigidBody.velocity.y == 0 && _rigidBody.velocity.x != 0)
                 {
@@ -129,10 +156,15 @@ public class PlayerController : MonoBehaviour
                 {
                     ChangeAnimatorState(PlayerAnimationStates.WALK_DOWN);
                 }
+                else
+                {
+                    ChangeAnimatorState(PlayerAnimationStates.WALK_UP);
+                }
 
                 break;
 
             case PlayerAnimationStates.WALK_DOWN:
+            case PlayerAnimationStates.PUSH_DOWN:
 
                 if (_rigidBody.velocity.y == 0 && _rigidBody.velocity.x != 0)
                 {
@@ -141,6 +173,10 @@ public class PlayerController : MonoBehaviour
                 else if (_rigidBody.velocity.y > 0)
                 {
                     ChangeAnimatorState(PlayerAnimationStates.WALK_UP);
+                }
+                else
+                {
+                    ChangeAnimatorState(PlayerAnimationStates.WALK_DOWN);
                 }
 
                 break;
@@ -156,9 +192,33 @@ public class PlayerController : MonoBehaviour
             default:
                 break;
         }
-
     }
 
+    private void HandlePushingAnimation()
+    {
+        if (Mathf.Abs(PushDirection.x) > Mathf.Abs(PushDirection.y))
+        {
+            if (PushDirection.x >= 0)
+            {
+                ChangeAnimatorState(PlayerAnimationStates.PUSH_HORIZONTAL);
+            }
+            else if (PushDirection.x < 0)
+            {
+                ChangeAnimatorState(PlayerAnimationStates.PUSH_HORIZONTAL);
+            }
+        }
+        else
+        {
+            if (PushDirection.y >= 0)
+            {
+                ChangeAnimatorState(PlayerAnimationStates.PUSH_DOWN);
+            }
+            else
+            {
+                ChangeAnimatorState(PlayerAnimationStates.PUSH_UP);
+            }
+        }
+    }
 
     // Changes the character animation based on the new state
     void ChangeAnimatorState(PlayerAnimationStates newState)
