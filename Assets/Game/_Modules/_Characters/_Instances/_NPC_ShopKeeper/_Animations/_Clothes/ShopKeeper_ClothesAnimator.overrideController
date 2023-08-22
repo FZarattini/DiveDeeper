@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShopKeeper_ClothesAnimator
+  m_Controller: {fileID: 9100000, guid: e07d2d5262d69c4418d6513248002868, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a5f56ece20a973048987675cb26dea5a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 71e58d83879776c408d75f2b3c8242b8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9b75835fe98b1924c8557861f146f60a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 926f80f3d2bb1e244aa376915c1fb4cc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d7aaa5c364bae2f40a3ad6822a7169a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c4e6dfbf57cb20b4d948279e8a721929, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ed72eda0fe601a84e9edb6ea0848ec0f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d67c880992b3b1b4fb05ba08522ad796, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8291732c6b245e847a71d3499dee0621, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ed3220afdae5b46418f077c46a4855ce, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b766a1681d31d4f448cae1c665d9ef82, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8f543f28c1da195479767ab3f04846ad, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d97d766ab3286f844b11af9ec057e891, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ff9869de755bfd242a579e9c3cf6057b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2b44d5a090578d744b822474e7a2ef0c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 202057d1a88c34e43a7ebc41acfe3363, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fed293e4c0060244bb814e8987b41855, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c32eece9d5c8fae4fa1ca3aea6713513, type: 2}
