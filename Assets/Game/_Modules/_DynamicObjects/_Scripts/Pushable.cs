@@ -7,6 +7,8 @@ public class Pushable : MonoBehaviour
     private Rigidbody2D rgbd;
 
     [SerializeField] private bool canBePushed = true;
+    [SerializeField] Rigidbody2D playerRB = null;
+    [SerializeField] RigidbodyConstraints2D playerConstraints;
 
     private Vector2 pushDirection;
 
@@ -18,16 +20,31 @@ public class Pushable : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player == null) return;
+        
+        playerRB = player.GetComponent<Rigidbody2D>();
+        if(playerRB == null) return;
+
+        SavePlayerConstraints();
+
         if (player != null)
         {
             pushDirection = (player.transform.position - transform.position).normalized;
             if (Mathf.Abs(pushDirection.x) > Mathf.Abs(pushDirection.y))
             {
-                rgbd.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                if (playerRB.velocity.x != 0 && playerRB.velocity.y == 0)
+                {
+                    rgbd.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                    playerRB.constraints = RigidbodyConstraints2D.FreezePositionY;
+                }
             }
             else
             {
-                rgbd.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+                if (playerRB.velocity.y != 0 && playerRB.velocity.x == 0)
+                {
+                    rgbd.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+                    playerRB.constraints = RigidbodyConstraints2D.FreezePositionX;
+                }
             }
 
             player.PushDirection = pushDirection;
@@ -40,8 +57,19 @@ public class Pushable : MonoBehaviour
         if (player != null)
         {
             rgbd.constraints = RigidbodyConstraints2D.FreezeRotation;
+            ReloadConstraints();
 
             player.PushDirection = Vector2.zero;
         }
+    }
+
+    void SavePlayerConstraints()
+    {
+        playerConstraints = playerRB.constraints;
+    }
+
+    void ReloadConstraints()
+    {
+        playerRB.constraints = playerConstraints;
     }
 }

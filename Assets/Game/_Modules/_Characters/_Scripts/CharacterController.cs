@@ -163,22 +163,22 @@ public class CharacterController : MonoBehaviour
     {
         if (Mathf.Abs(PushDirection.x) > Mathf.Abs(PushDirection.y))
         {
-            if (PushDirection.x >= 0)
+            if (PushDirection.x > 0 && _rigidBody.velocity.x != 0)
             {
                 ChangeAnimatorState(CharacterAnimationStates.PUSH_HORIZONTAL);
             }
-            else if (PushDirection.x < 0)
+            else if (PushDirection.x < 0 && _rigidBody.velocity.x != 0)
             {
                 ChangeAnimatorState(CharacterAnimationStates.PUSH_HORIZONTAL);
             }
         }
         else
         {
-            if (PushDirection.y >= 0)
+            if (PushDirection.y > 0 && _rigidBody.velocity.y != 0)
             {
                 ChangeAnimatorState(CharacterAnimationStates.PUSH_DOWN);
             }
-            else
+            else if (PushDirection.y < 0 && _rigidBody.velocity.y != 0)
             {
                 ChangeAnimatorState(CharacterAnimationStates.PUSH_UP);
             }
