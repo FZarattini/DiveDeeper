@@ -32,7 +32,7 @@ public class Pushable : MonoBehaviour
             pushDirection = (player.transform.position - transform.position).normalized;
             if (Mathf.Abs(pushDirection.x) > Mathf.Abs(pushDirection.y))
             {
-                if (playerRB.velocity.x != 0 && playerRB.velocity.y == 0)
+                if (playerRB.velocity.x != 0)
                 {
                     rgbd.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
                     playerRB.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
@@ -40,7 +40,7 @@ public class Pushable : MonoBehaviour
             }
             else
             {
-                if (playerRB.velocity.y != 0 && playerRB.velocity.x == 0)
+                if (playerRB.velocity.y != 0)
                 {
                     rgbd.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
                     playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;

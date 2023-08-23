@@ -59,6 +59,9 @@ TagManager:
   - name: Walls
     uniqueID: 2358008613
     locked: 0
+  - name: Interior Objects
+    uniqueID: 3691735835
+    locked: 0
   - name: Player
     uniqueID: 3931604679
     locked: 0
