@@ -33,6 +33,7 @@ public class CharacterController : MonoBehaviour
 
         if (_rigidBody.velocity == Vector2.zero || GameManager.Instance.OnDialogue)
         {
+            PushDirection = Vector2.zero;
             if (!IsIdleState())
                 SetIdle();
         }
