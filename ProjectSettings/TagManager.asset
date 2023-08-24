@@ -62,7 +62,7 @@ TagManager:
   - name: Interior Objects
     uniqueID: 3691735835
     locked: 0
-  - name: Player
+  - name: Dynamic
     uniqueID: 3931604679
     locked: 0
   - name: Clothes
