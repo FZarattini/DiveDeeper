@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -151,6 +151,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1200638675}
   m_RootOrder: 0
@@ -221,6 +222,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 97212708}
   - {fileID: 363883263}
@@ -814,28 +816,24 @@ MonoBehaviour:
   MultiplayerInfo: {fileID: 0}
   OnStartBehaviour: 1
   OnShowCallback:
-    Enabled: 0
     EventName: OnShowCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnVisibleCallback:
-    Enabled: 0
     EventName: OnVisibleCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHideCallback:
-    Enabled: 0
     EventName: OnHideCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHiddenCallback:
-    Enabled: 0
     EventName: OnHiddenCallback
     Runners: []
     Event:
@@ -844,6 +842,9 @@ MonoBehaviour:
   OnVisibilityChangedCallback:
     m_PersistentCalls:
       m_Calls: []
+  ShowProgressors: []
+  HideProgressors: []
+  ShowHideProgressors: []
   CustomStartPosition: {x: 0, y: 0, z: 0}
   UseCustomStartPosition: 1
   AutoHideAfterShow: 0
@@ -851,6 +852,7 @@ MonoBehaviour:
   DisableGameObjectWhenHidden: 0
   DisableCanvasWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
+  HandleCanvasGroupBlockRaycasts: 1
   ClearSelectedOnShow: 0
   ClearSelectedOnHide: 0
   AutoSelectAfterShow: 0
@@ -889,7 +891,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -955,6 +959,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 65092080}
   m_RootOrder: 0
@@ -1030,6 +1035,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 741835184}
   m_RootOrder: 1
@@ -1103,6 +1109,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1353174257}
   m_RootOrder: 0
@@ -1443,7 +1450,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -1460,7 +1469,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -1495,6 +1503,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &227744183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,7 +1519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -1543,6 +1553,9 @@ MonoBehaviour:
     Category: Music
     Name: Signals
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &227744184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,8 +1782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6915195837973857674, guid: 65784e1676f54164abf945499e99455e,
-    type: 3}
+  m_Sprite: {fileID: 6915195837973857674, guid: 65784e1676f54164abf945499e99455e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1820,9 +1832,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1867,6 +1887,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1901,6 +1922,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1327325719}
   - {fileID: 1815661728}
@@ -1965,9 +1987,7 @@ MonoBehaviour:
   CurrentStateName: Disabled
   NormalState:
     StateType: 0
-    StateName: Normal
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -1975,9 +1995,7 @@ MonoBehaviour:
           m_Calls: []
   HighlightedState:
     StateType: 1
-    StateName: Highlighted
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -1985,9 +2003,7 @@ MonoBehaviour:
           m_Calls: []
   PressedState:
     StateType: 2
-    StateName: Pressed
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -1995,9 +2011,7 @@ MonoBehaviour:
           m_Calls: []
   SelectedState:
     StateType: 3
-    StateName: Selected
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -2005,9 +2019,7 @@ MonoBehaviour:
           m_Calls: []
   DisabledState:
     StateType: 4
-    StateName: Disabled
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -2017,33 +2029,31 @@ MonoBehaviour:
     Behaviours: []
     SignalSource: {fileID: 274771425}
     Selectable: {fileID: 274771427}
+  Cooldown: 0
+  DisableWhenInCooldown: 0
   Id:
     Category: None
     Name: None
     Custom: 1
   OnToggleOnCallback:
-    Enabled: 0
     EventName: OnToggleOnCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnInstantToggleOnCallback:
-    Enabled: 0
     EventName: OnInstantToggleOnCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnToggleOffCallback:
-    Enabled: 0
     EventName: OnToggleOffCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnInstantToggleOffCallback:
-    Enabled: 0
     EventName: OnInstantToggleOffCallback
     Runners: []
     Event:
@@ -2053,18 +2063,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ToggleGroup: {fileID: 0}
+  IsLocked: 0
   OverrideInteractabilityForToggles: 0
   ToggleGroupValue: 2
   Mode: 2
   HasMixedValues: 1
   AutoSort: 1
   OnToggleGroupMixedValuesCallback:
-    Enabled: 0
     EventName: OnToggleGroupMixedValuesCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
+  OnToggleAddedCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  OnToggleRemovedCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  OnToggleTriggeredCallback:
+    m_PersistentCalls:
+      m_Calls: []
   FirstToggle: {fileID: 1327325720}
 --- !u!114 &274771428
 MonoBehaviour:
@@ -2154,6 +2173,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 473534592}
   m_RootOrder: 0
@@ -2237,6 +2257,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1622010734}
   m_RootOrder: 0
@@ -2577,7 +2598,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -2594,7 +2617,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -2629,6 +2651,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &321473405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2642,7 +2667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -2677,6 +2701,9 @@ MonoBehaviour:
     Category: Music
     Name: UIMenu
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &321473406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,8 +2930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8952607500317555350, guid: e1e23acf29db6924f8538beebee064e2,
-    type: 3}
+  m_Sprite: {fileID: 8952607500317555350, guid: e1e23acf29db6924f8538beebee064e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2950,6 +2976,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1326141091}
   m_RootOrder: 2
@@ -3016,6 +3043,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1961195447}
   m_RootOrder: 1
@@ -3106,6 +3134,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 65092080}
   m_RootOrder: 1
@@ -3195,6 +3224,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 869556818}
   m_RootOrder: 1
@@ -3260,6 +3290,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1874299105}
   - {fileID: 1231411745}
@@ -3343,6 +3374,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 280573357}
   - {fileID: 1497460160}
@@ -3936,28 +3968,24 @@ MonoBehaviour:
   MultiplayerInfo: {fileID: 0}
   OnStartBehaviour: 1
   OnShowCallback:
-    Enabled: 0
     EventName: OnShowCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnVisibleCallback:
-    Enabled: 0
     EventName: OnVisibleCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHideCallback:
-    Enabled: 0
     EventName: OnHideCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHiddenCallback:
-    Enabled: 0
     EventName: OnHiddenCallback
     Runners: []
     Event:
@@ -3966,6 +3994,9 @@ MonoBehaviour:
   OnVisibilityChangedCallback:
     m_PersistentCalls:
       m_Calls: []
+  ShowProgressors: []
+  HideProgressors: []
+  ShowHideProgressors: []
   CustomStartPosition: {x: 0, y: 0, z: 0}
   UseCustomStartPosition: 1
   AutoHideAfterShow: 0
@@ -3973,6 +4004,7 @@ MonoBehaviour:
   DisableGameObjectWhenHidden: 0
   DisableCanvasWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
+  HandleCanvasGroupBlockRaycasts: 1
   ClearSelectedOnShow: 0
   ClearSelectedOnHide: 0
   AutoSelectAfterShow: 0
@@ -4011,7 +4043,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4085,6 +4119,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1353174257}
   m_RootOrder: 2
@@ -4425,7 +4460,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -4442,7 +4479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -4477,6 +4513,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &512539495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4490,7 +4529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -4525,6 +4563,9 @@ MonoBehaviour:
     Category: Music
     Name: Signals
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &512539496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4751,8 +4792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4573336902175636049, guid: b22ba381df8b0ce4995e495fe3b8c21e,
-    type: 3}
+  m_Sprite: {fileID: 4573336902175636049, guid: b22ba381df8b0ce4995e495fe3b8c21e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4798,6 +4838,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 796156833}
   - {fileID: 1614293101}
@@ -4877,6 +4918,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 953547720}
   m_RootOrder: 6
@@ -4899,7 +4941,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -4921,6 +4962,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &519484031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4934,7 +4978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -4956,6 +4999,9 @@ MonoBehaviour:
     Category: Music
     Name: UIMenu
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &519484032
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5082,6 +5128,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 979083932}
   m_Father: {fileID: 1360688752}
@@ -5725,6 +5772,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1742390536}
   - {fileID: 473534592}
@@ -5839,6 +5887,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 953547720}
   m_RootOrder: 3
@@ -5861,7 +5910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -5883,6 +5931,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &616841942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5896,7 +5947,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -5918,6 +5968,9 @@ MonoBehaviour:
     Category: Music
     Name: Reactor
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &616841943
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6042,6 +6095,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 869556818}
   m_RootOrder: 3
@@ -6107,6 +6161,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1143148285}
   m_Father: {fileID: 1326141091}
@@ -6172,6 +6227,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1614270460}
   - {fileID: 169614030}
@@ -6239,6 +6295,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 976064675}
   m_RootOrder: 0
@@ -6322,6 +6379,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1622010734}
   m_RootOrder: 1
@@ -6662,7 +6720,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -6679,7 +6739,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -6714,6 +6773,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &778972334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6727,7 +6789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -6762,6 +6823,9 @@ MonoBehaviour:
     Category: Music
     Name: UIMenu
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &778972335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6963,8 +7027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4067063399433146223, guid: bb8ade02129da5148b248ed091abfe73,
-    type: 3}
+  m_Sprite: {fileID: -4067063399433146223, guid: bb8ade02129da5148b248ed091abfe73, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7010,6 +7073,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145484638}
   m_RootOrder: 0
@@ -7093,6 +7157,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 517044280}
   m_RootOrder: 0
@@ -7328,8 +7393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1997174139208641909, guid: 20899c21a3c70804fb274d37798b3b5a,
-    type: 3}
+  m_Sprite: {fileID: -1997174139208641909, guid: 20899c21a3c70804fb274d37798b3b5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7360,7 +7424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -7395,6 +7458,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &796156839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7408,7 +7474,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -7443,6 +7508,9 @@ MonoBehaviour:
     Category: Music
     Name: Reactor
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!223 &796156840
 Canvas:
   m_ObjectHideFlags: 0
@@ -7460,7 +7528,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -7805,6 +7875,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1974176395}
   - {fileID: 428350988}
@@ -7872,6 +7943,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1162985342}
   m_Father: {fileID: 741835184}
@@ -7986,7 +8058,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -8000,6 +8074,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2131017430}
   - {fileID: 1280706315}
@@ -8046,6 +8121,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 758895736}
   m_Father: {fileID: 1815661728}
@@ -8687,6 +8763,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 557351974}
   m_RootOrder: 0
@@ -8761,6 +8838,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 953547720}
   m_RootOrder: 2
@@ -8785,10 +8863,21 @@ MonoBehaviour:
   DontDestroyOnSceneChange: 0
   Flow: {fileID: 11400000, guid: 8c6904086ccc3574f8e98322216e361b, type: 2}
   FlowType: 0
+  OnEnableBehaviour: 1
+  OnDisableBehaviour: 3
   OnStart:
     m_PersistentCalls:
       m_Calls: []
   OnStop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPause:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResume:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBackFlow:
     m_PersistentCalls:
       m_Calls: []
   MultiplayerInfo: {fileID: 0}
@@ -8820,6 +8909,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 741835184}
   m_RootOrder: 3
@@ -8885,6 +8975,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2145484638}
   m_Father: {fileID: 274771426}
@@ -8946,9 +9037,7 @@ MonoBehaviour:
   CurrentStateName: Normal
   NormalState:
     StateType: 0
-    StateName: Normal
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -8956,9 +9045,7 @@ MonoBehaviour:
           m_Calls: []
   HighlightedState:
     StateType: 1
-    StateName: Highlighted
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -8966,9 +9053,7 @@ MonoBehaviour:
           m_Calls: []
   PressedState:
     StateType: 2
-    StateName: Pressed
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -8976,9 +9061,7 @@ MonoBehaviour:
           m_Calls: []
   SelectedState:
     StateType: 3
-    StateName: Selected
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -8986,9 +9069,7 @@ MonoBehaviour:
           m_Calls: []
   DisabledState:
     StateType: 4
-    StateName: Disabled
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -8998,12 +9079,13 @@ MonoBehaviour:
     Behaviours: []
     SignalSource: {fileID: 1091950707}
     Selectable: {fileID: 1091950709}
+  Cooldown: 0
+  DisableWhenInCooldown: 0
   Id:
     Category: Tab
     Name: UIMenu
     Custom: 1
   OnToggleOnCallback:
-    Enabled: 1
     EventName: OnToggleOnCallback
     Runners: []
     Event:
@@ -9023,7 +9105,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOnCallback:
-    Enabled: 1
     EventName: OnInstantToggleOnCallback
     Runners: []
     Event:
@@ -9043,7 +9124,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   OnToggleOffCallback:
-    Enabled: 1
     EventName: OnToggleOffCallback
     Runners: []
     Event:
@@ -9063,7 +9143,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOffCallback:
-    Enabled: 1
     EventName: OnInstantToggleOffCallback
     Runners: []
     Event:
@@ -9086,6 +9165,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ToggleGroup: {fileID: 274771427}
+  IsLocked: 0
 --- !u!222 &1091950714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9131,6 +9211,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1974176395}
   m_RootOrder: 0
@@ -9157,7 +9238,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -9174,7 +9257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -9209,6 +9291,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1141720546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9222,7 +9307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -9257,6 +9341,9 @@ MonoBehaviour:
     Category: Music
     Name: Reactor
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1141720547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9478,8 +9565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2718559331962639617, guid: d6e2abe0eab59eb4291d099fb900243d,
-    type: 3}
+  m_Sprite: {fileID: -2718559331962639617, guid: d6e2abe0eab59eb4291d099fb900243d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9847,6 +9933,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 690483280}
   m_RootOrder: 0
@@ -10187,7 +10274,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -10204,7 +10293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -10239,6 +10327,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1143148291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10252,7 +10343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -10287,6 +10377,9 @@ MonoBehaviour:
     Category: Music
     Name: UIMenu
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1143148292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10513,8 +10606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8083855426473630853, guid: 3d648843d4ef6a342868986cbb2f3a90,
-    type: 3}
+  m_Sprite: {fileID: -8083855426473630853, guid: 3d648843d4ef6a342868986cbb2f3a90, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -10569,6 +10661,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 899780203}
   m_RootOrder: 0
@@ -10909,7 +11002,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -10926,7 +11021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -10961,6 +11055,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1162985348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10974,7 +11071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -11009,6 +11105,9 @@ MonoBehaviour:
     Category: Music
     Name: Nody
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1162985349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11230,8 +11329,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4169093440910042068, guid: 109c205087abf3b4fa622802dfdbaba0,
-    type: 3}
+  m_Sprite: {fileID: -4169093440910042068, guid: 109c205087abf3b4fa622802dfdbaba0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11279,6 +11377,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1362553494}
   m_Father: {fileID: 1327325719}
@@ -11919,6 +12018,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3584958}
   - {fileID: 1916556447}
@@ -11986,6 +12086,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1200638675}
   m_RootOrder: 3
@@ -12059,6 +12160,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 430854218}
   m_RootOrder: 1
@@ -12399,7 +12501,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -12416,7 +12520,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -12451,6 +12554,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1231411751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12464,7 +12570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -12499,6 +12604,9 @@ MonoBehaviour:
     Category: Music
     Name: Nody
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1231411752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12700,8 +12808,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5004821904227373893, guid: d6e2abe0eab59eb4291d099fb900243d,
-    type: 3}
+  m_Sprite: {fileID: 5004821904227373893, guid: d6e2abe0eab59eb4291d099fb900243d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12747,6 +12854,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1961195447}
   m_RootOrder: 0
@@ -12820,6 +12928,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 567538501}
   - {fileID: 274771426}
@@ -12858,6 +12967,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1586023221}
   - {fileID: 1587016841}
@@ -12924,6 +13034,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1178580258}
   m_Father: {fileID: 274771426}
@@ -12985,9 +13096,7 @@ MonoBehaviour:
   CurrentStateName: Normal
   NormalState:
     StateType: 0
-    StateName: Normal
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -12995,9 +13104,7 @@ MonoBehaviour:
           m_Calls: []
   HighlightedState:
     StateType: 1
-    StateName: Highlighted
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -13005,9 +13112,7 @@ MonoBehaviour:
           m_Calls: []
   PressedState:
     StateType: 2
-    StateName: Pressed
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -13015,9 +13120,7 @@ MonoBehaviour:
           m_Calls: []
   SelectedState:
     StateType: 3
-    StateName: Selected
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -13025,9 +13128,7 @@ MonoBehaviour:
           m_Calls: []
   DisabledState:
     StateType: 4
-    StateName: Disabled
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -13037,12 +13138,13 @@ MonoBehaviour:
     Behaviours: []
     SignalSource: {fileID: 1327325718}
     Selectable: {fileID: 1327325720}
+  Cooldown: 0
+  DisableWhenInCooldown: 0
   Id:
     Category: Tab
     Name: Reactor
     Custom: 1
   OnToggleOnCallback:
-    Enabled: 1
     EventName: OnToggleOnCallback
     Runners: []
     Event:
@@ -13062,7 +13164,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOnCallback:
-    Enabled: 1
     EventName: OnInstantToggleOnCallback
     Runners: []
     Event:
@@ -13082,7 +13183,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   OnToggleOffCallback:
-    Enabled: 1
     EventName: OnToggleOffCallback
     Runners: []
     Event:
@@ -13102,7 +13202,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOffCallback:
-    Enabled: 1
     EventName: OnInstantToggleOffCallback
     Runners: []
     Event:
@@ -13125,6 +13224,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ToggleGroup: {fileID: 274771427}
+  IsLocked: 0
 --- !u!1 &1331947994
 GameObject:
   m_ObjectHideFlags: 0
@@ -13161,6 +13261,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1353174257}
   m_RootOrder: 1
@@ -13501,7 +13602,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -13518,7 +13621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -13553,6 +13655,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1331948001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13566,7 +13671,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -13601,6 +13705,9 @@ MonoBehaviour:
     Category: Music
     Name: Signals
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1331948002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13827,8 +13934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4573336902175636049, guid: b22ba381df8b0ce4995e495fe3b8c21e,
-    type: 3}
+  m_Sprite: {fileID: 4573336902175636049, guid: b22ba381df8b0ce4995e495fe3b8c21e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13875,6 +13981,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 953547720}
   m_RootOrder: 5
@@ -13897,7 +14004,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -13919,6 +14025,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1341295727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13932,7 +14041,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -13954,6 +14062,9 @@ MonoBehaviour:
     Category: Music
     Name: Nody
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &1341295728
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14078,6 +14189,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 227744177}
   - {fileID: 1331947995}
@@ -14156,6 +14268,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 557351974}
   m_Father: {fileID: 274771426}
@@ -14217,9 +14330,7 @@ MonoBehaviour:
   CurrentStateName: Normal
   NormalState:
     StateType: 0
-    StateName: Normal
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -14227,9 +14338,7 @@ MonoBehaviour:
           m_Calls: []
   HighlightedState:
     StateType: 1
-    StateName: Highlighted
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -14237,9 +14346,7 @@ MonoBehaviour:
           m_Calls: []
   PressedState:
     StateType: 2
-    StateName: Pressed
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -14247,9 +14354,7 @@ MonoBehaviour:
           m_Calls: []
   SelectedState:
     StateType: 3
-    StateName: Selected
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -14257,9 +14362,7 @@ MonoBehaviour:
           m_Calls: []
   DisabledState:
     StateType: 4
-    StateName: Disabled
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -14269,12 +14372,13 @@ MonoBehaviour:
     Behaviours: []
     SignalSource: {fileID: 1360688751}
     Selectable: {fileID: 1360688753}
+  Cooldown: 0
+  DisableWhenInCooldown: 0
   Id:
     Category: Tab
     Name: Nody
     Custom: 1
   OnToggleOnCallback:
-    Enabled: 1
     EventName: OnToggleOnCallback
     Runners: []
     Event:
@@ -14294,7 +14398,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOnCallback:
-    Enabled: 1
     EventName: OnInstantToggleOnCallback
     Runners: []
     Event:
@@ -14314,7 +14417,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   OnToggleOffCallback:
-    Enabled: 1
     EventName: OnToggleOffCallback
     Runners: []
     Event:
@@ -14334,7 +14436,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOffCallback:
-    Enabled: 1
     EventName: OnInstantToggleOffCallback
     Runners: []
     Event:
@@ -14357,6 +14458,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ToggleGroup: {fileID: 274771427}
+  IsLocked: 0
 --- !u!222 &1360688758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14393,6 +14495,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1178580258}
   m_RootOrder: 0
@@ -14469,6 +14572,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 473534592}
   m_RootOrder: 1
@@ -14566,6 +14670,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 517044280}
   m_RootOrder: 2
@@ -14801,8 +14906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9110543880370040432, guid: 7fab97fd91ea01d449d073274fe17515,
-    type: 3}
+  m_Sprite: {fileID: -9110543880370040432, guid: 7fab97fd91ea01d449d073274fe17515, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14833,7 +14937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -14868,6 +14971,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1518387165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14881,7 +14987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -14916,6 +15021,9 @@ MonoBehaviour:
     Category: Music
     Name: Reactor
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!223 &1518387166
 Canvas:
   m_ObjectHideFlags: 0
@@ -14933,7 +15041,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -15279,6 +15389,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1326141091}
   m_RootOrder: 0
@@ -15344,6 +15455,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1326141091}
   m_RootOrder: 1
@@ -15409,6 +15521,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 741835184}
   m_RootOrder: 0
@@ -15482,6 +15595,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 517044280}
   m_RootOrder: 1
@@ -15717,8 +15831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9110543880370040432, guid: 7fab97fd91ea01d449d073274fe17515,
-    type: 3}
+  m_Sprite: {fileID: -9110543880370040432, guid: 7fab97fd91ea01d449d073274fe17515, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -15749,7 +15862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -15784,6 +15896,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1614293107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15797,7 +15912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -15832,6 +15946,9 @@ MonoBehaviour:
     Category: Music
     Name: Reactor
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!223 &1614293108
 Canvas:
   m_ObjectHideFlags: 0
@@ -15849,7 +15966,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -16195,6 +16314,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 321473399}
   - {fileID: 778972328}
@@ -16273,6 +16393,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1200638675}
   m_RootOrder: 2
@@ -16339,6 +16460,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 953547720}
   m_RootOrder: 4
@@ -16361,7 +16483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -16383,6 +16504,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1700589075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16396,7 +16520,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -16418,6 +16541,9 @@ MonoBehaviour:
     Category: Music
     Name: Signals
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &1700589076
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16544,32 +16670,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!114 &1723492380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16595,6 +16713,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -16635,6 +16754,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 430854218}
   m_RootOrder: 2
@@ -16975,7 +17095,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -16992,7 +17114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -17027,6 +17148,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1736002145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17040,7 +17164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -17075,6 +17198,9 @@ MonoBehaviour:
     Category: Music
     Name: Nody
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1736002146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17276,8 +17402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9112817675296745558, guid: d6e2abe0eab59eb4291d099fb900243d,
-    type: 3}
+  m_Sprite: {fileID: 9112817675296745558, guid: d6e2abe0eab59eb4291d099fb900243d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -17328,6 +17453,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1926226314}
   - {fileID: 1790990453}
@@ -17921,28 +18047,24 @@ MonoBehaviour:
   MultiplayerInfo: {fileID: 0}
   OnStartBehaviour: 1
   OnShowCallback:
-    Enabled: 0
     EventName: OnShowCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnVisibleCallback:
-    Enabled: 0
     EventName: OnVisibleCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHideCallback:
-    Enabled: 0
     EventName: OnHideCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHiddenCallback:
-    Enabled: 0
     EventName: OnHiddenCallback
     Runners: []
     Event:
@@ -17951,6 +18073,9 @@ MonoBehaviour:
   OnVisibilityChangedCallback:
     m_PersistentCalls:
       m_Calls: []
+  ShowProgressors: []
+  HideProgressors: []
+  ShowHideProgressors: []
   CustomStartPosition: {x: 0, y: 0, z: 0}
   UseCustomStartPosition: 1
   AutoHideAfterShow: 0
@@ -17958,6 +18083,7 @@ MonoBehaviour:
   DisableGameObjectWhenHidden: 0
   DisableCanvasWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
+  HandleCanvasGroupBlockRaycasts: 1
   ClearSelectedOnShow: 0
   ClearSelectedOnHide: 0
   AutoSelectAfterShow: 0
@@ -17996,7 +18122,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -18063,6 +18191,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1742390536}
   m_RootOrder: 1
@@ -18151,6 +18280,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 976064675}
   m_Father: {fileID: 274771426}
@@ -18212,9 +18342,7 @@ MonoBehaviour:
   CurrentStateName: Normal
   NormalState:
     StateType: 0
-    StateName: Normal
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -18222,9 +18350,7 @@ MonoBehaviour:
           m_Calls: []
   HighlightedState:
     StateType: 1
-    StateName: Highlighted
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -18232,9 +18358,7 @@ MonoBehaviour:
           m_Calls: []
   PressedState:
     StateType: 2
-    StateName: Pressed
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -18242,9 +18366,7 @@ MonoBehaviour:
           m_Calls: []
   SelectedState:
     StateType: 3
-    StateName: Selected
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -18252,9 +18374,7 @@ MonoBehaviour:
           m_Calls: []
   DisabledState:
     StateType: 4
-    StateName: Disabled
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -18264,12 +18384,13 @@ MonoBehaviour:
     Behaviours: []
     SignalSource: {fileID: 1815661727}
     Selectable: {fileID: 1815661729}
+  Cooldown: 0
+  DisableWhenInCooldown: 0
   Id:
     Category: Tab
     Name: Signals
     Custom: 1
   OnToggleOnCallback:
-    Enabled: 1
     EventName: OnToggleOnCallback
     Runners: []
     Event:
@@ -18289,7 +18410,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOnCallback:
-    Enabled: 1
     EventName: OnInstantToggleOnCallback
     Runners: []
     Event:
@@ -18309,7 +18429,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   OnToggleOffCallback:
-    Enabled: 1
     EventName: OnToggleOffCallback
     Runners: []
     Event:
@@ -18329,7 +18448,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 1
   OnInstantToggleOffCallback:
-    Enabled: 1
     EventName: OnInstantToggleOffCallback
     Runners: []
     Event:
@@ -18352,6 +18470,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ToggleGroup: {fileID: 274771427}
+  IsLocked: 0
 --- !u!1 &1874299104
 GameObject:
   m_ObjectHideFlags: 0
@@ -18388,6 +18507,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 430854218}
   m_RootOrder: 0
@@ -18728,7 +18848,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -18745,7 +18867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -18780,6 +18901,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1874299111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18793,7 +18917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -18828,6 +18951,9 @@ MonoBehaviour:
     Category: Music
     Name: Nody
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1874299112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19029,8 +19155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2486436317230249441, guid: b00f486f805e20c4e9f688952e8ac831,
-    type: 3}
+  m_Sprite: {fileID: 2486436317230249441, guid: b00f486f805e20c4e9f688952e8ac831, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -19076,6 +19201,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2109335757}
   m_Father: {fileID: 1200638675}
@@ -19142,6 +19268,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1742390536}
   m_RootOrder: 0
@@ -19222,6 +19349,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1275585364}
   - {fileID: 349691129}
@@ -19815,28 +19943,24 @@ MonoBehaviour:
   MultiplayerInfo: {fileID: 0}
   OnStartBehaviour: 1
   OnShowCallback:
-    Enabled: 0
     EventName: OnShowCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnVisibleCallback:
-    Enabled: 0
     EventName: OnVisibleCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHideCallback:
-    Enabled: 0
     EventName: OnHideCallback
     Runners: []
     Event:
       m_PersistentCalls:
         m_Calls: []
   OnHiddenCallback:
-    Enabled: 1
     EventName: OnHiddenCallback
     Runners: []
     Event:
@@ -19845,6 +19969,9 @@ MonoBehaviour:
   OnVisibilityChangedCallback:
     m_PersistentCalls:
       m_Calls: []
+  ShowProgressors: []
+  HideProgressors: []
+  ShowHideProgressors: []
   CustomStartPosition: {x: 0, y: 0, z: 0}
   UseCustomStartPosition: 1
   AutoHideAfterShow: 0
@@ -19852,6 +19979,7 @@ MonoBehaviour:
   DisableGameObjectWhenHidden: 0
   DisableCanvasWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
+  HandleCanvasGroupBlockRaycasts: 1
   ClearSelectedOnShow: 0
   ClearSelectedOnHide: 0
   AutoSelectAfterShow: 0
@@ -19890,7 +20018,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -19956,6 +20086,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1141720543}
   m_Father: {fileID: 869556818}
@@ -20030,6 +20161,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1622010734}
   m_RootOrder: 2
@@ -20370,7 +20502,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -20387,7 +20521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -20422,6 +20555,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1994922415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20435,7 +20571,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -20470,6 +20605,9 @@ MonoBehaviour:
     Category: Music
     Name: UIMenu
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1994922416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20671,8 +20809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3301794979571864865, guid: bb8ade02129da5148b248ed091abfe73,
-    type: 3}
+  m_Sprite: {fileID: 3301794979571864865, guid: bb8ade02129da5148b248ed091abfe73, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -20718,6 +20855,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 869556818}
   m_RootOrder: 2
@@ -20792,6 +20930,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1916556447}
   m_RootOrder: 0
@@ -21132,7 +21271,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
@@ -21149,7 +21290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -21184,6 +21324,9 @@ MonoBehaviour:
     Category: Music
     Name: Stop
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2109335763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21197,7 +21340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Callback:
-    Enabled: 1
     EventName: Callback
     Runners: []
     Event:
@@ -21232,6 +21374,9 @@ MonoBehaviour:
     Category: Music
     Name: Signals
     Custom: 1
+  OnSignal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2109335764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21453,8 +21598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6252082951245842921, guid: bb8ade02129da5148b248ed091abfe73,
-    type: 3}
+  m_Sprite: {fileID: -6252082951245842921, guid: bb8ade02129da5148b248ed091abfe73, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -21502,6 +21646,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 953547720}
   m_RootOrder: 0
@@ -21658,6 +21803,8 @@ MonoBehaviour:
       ToLightnessOffset: 0
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2145484637
 GameObject:
   m_ObjectHideFlags: 0
@@ -21688,6 +21835,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 779251712}
   m_Father: {fileID: 1091950708}

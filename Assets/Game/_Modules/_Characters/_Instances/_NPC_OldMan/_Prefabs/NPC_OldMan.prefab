@@ -104,3 +104,5 @@ MonoBehaviour:
   _dialogue: {fileID: 11400000, guid: 3ef87f3939a2b464faba2c9066d82f11, type: 2}
   _secondDialogue: {fileID: 11400000, guid: 1d9dab0e03f5b0248ad5ea49596e1e42, type: 2}
   _currentDialogue: {fileID: 0}
+  _closedBasementEntrance: {fileID: 0}
+  _openedBasementEntrance: {fileID: 0}

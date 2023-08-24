@@ -27,6 +27,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4059209545714091410}
   m_Father: {fileID: 0}
@@ -88,9 +89,7 @@ MonoBehaviour:
   CurrentStateName: Normal
   NormalState:
     StateType: 0
-    StateName: Normal
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -98,9 +97,7 @@ MonoBehaviour:
           m_Calls: []
   HighlightedState:
     StateType: 1
-    StateName: Highlighted
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -108,9 +105,7 @@ MonoBehaviour:
           m_Calls: []
   PressedState:
     StateType: 2
-    StateName: Pressed
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -118,9 +113,7 @@ MonoBehaviour:
           m_Calls: []
   SelectedState:
     StateType: 3
-    StateName: Selected
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -128,9 +121,7 @@ MonoBehaviour:
           m_Calls: []
   DisabledState:
     StateType: 4
-    StateName: Disabled
     StateEvent:
-      Enabled: 1
       EventName: Unnamed
       Runners: []
       Event:
@@ -140,6 +131,8 @@ MonoBehaviour:
     Behaviours: []
     SignalSource: {fileID: 821075826393403695}
     Selectable: {fileID: 8871742844899048185}
+  Cooldown: 0
+  DisableWhenInCooldown: 0
   Id:
     Category: Direction
     Name: Left
@@ -178,6 +171,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8769571928467536950}
   m_Father: {fileID: 5692942411038734834}
@@ -205,7 +199,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -385,6 +381,8 @@ MonoBehaviour:
       ToLightnessOffset: 0
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   HighlightedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -465,6 +463,8 @@ MonoBehaviour:
       ToLightnessOffset: 0.1
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   PressedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -545,6 +545,8 @@ MonoBehaviour:
       ToLightnessOffset: -0.1
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   SelectedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -625,6 +627,8 @@ MonoBehaviour:
       ToLightnessOffset: 0.2
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   DisabledAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -705,6 +709,8 @@ MonoBehaviour:
       ToLightnessOffset: 0
       FromAlphaOffset: 0
       ToAlphaOffset: -0.5
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8174386309396574573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2102,6 +2108,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4059209545714091410}
   m_RootOrder: 0
@@ -3635,6 +3642,8 @@ MonoBehaviour:
       ToLightnessOffset: 0
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   HighlightedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -3715,6 +3724,8 @@ MonoBehaviour:
       ToLightnessOffset: 0.1
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   PressedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -3795,6 +3806,8 @@ MonoBehaviour:
       ToLightnessOffset: -0.1
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   SelectedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -3875,6 +3888,8 @@ MonoBehaviour:
       ToLightnessOffset: 0.2
       FromAlphaOffset: 0
       ToAlphaOffset: 0
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
   DisabledAnimation:
     OnPlayCallback:
       m_PersistentCalls:
@@ -3955,3 +3970,5 @@ MonoBehaviour:
       ToLightnessOffset: 0
       FromAlphaOffset: 0
       ToAlphaOffset: -0.5
+    UseCustomStartValue: 0
+    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}

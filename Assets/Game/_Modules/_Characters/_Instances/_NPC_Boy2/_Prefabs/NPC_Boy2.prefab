@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Boy2
       objectReference: {fileID: 0}
+    - target: {fileID: 278822300540470861, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1640156994693810496, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1676262857, guid: 1d20f435a87507d48a900699826fbfa0, type: 3}
+    - target: {fileID: 4332312891065761854, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5649420194833921000, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Controller
       value: 
@@ -80,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1322134730, guid: 09b3054c9b8d46640ac25221ed8f6dff, type: 3}
+    - target: {fileID: 7372068415444777043, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8159229566757764749, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: defaultState
       value: 1
