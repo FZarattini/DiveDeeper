@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RatController : MonoBehaviour
+public class FollowTarget : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
 

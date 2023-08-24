@@ -28,6 +28,7 @@ public class PlayerInputHandler : MonoBehaviour
         input.Player.Movement.canceled += OnMovementCancelled;
         input.Player.Interaction.performed += OnInteractionPerformed;
         input.Player.NextDialog.performed += OnNextDialoguePerformed;
+        input.Player.Attack.performed += OnAttackPerformed;
     }
 
     private void OnDisable()
@@ -37,6 +38,7 @@ public class PlayerInputHandler : MonoBehaviour
         input.Player.Movement.canceled -= OnMovementCancelled;
         input.Player.Interaction.performed -= OnInteractionPerformed;
         input.Player.NextDialog.performed -= OnNextDialoguePerformed;
+        input.Player.Attack.performed -= OnAttackPerformed;
     }
 
     private void FixedUpdate()
@@ -65,6 +67,14 @@ public class PlayerInputHandler : MonoBehaviour
         if (!GameManager.Instance.OnDialogue) return;
 
         OnNextDialog?.Invoke();
+    }
+
+    //On Player Attack
+    private void OnAttackPerformed(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.OnDialogue) return;
+
+        _characterController.Attack();
     }
 
     // On stop movement

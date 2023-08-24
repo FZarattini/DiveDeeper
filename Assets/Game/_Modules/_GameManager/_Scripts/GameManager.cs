@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     [Title("GameStates")]
     [SerializeField, ReadOnly] bool onDialogue = false;
+    [SerializeField, ReadOnly] bool isAttacking = false;
+    [SerializeField, ReadOnly] bool isGettingKnockback = false;
     [SerializeField, ReadOnly] bool onPlayerChoice = false;
     [SerializeField, ReadOnly] bool foundRat = false;
 
@@ -23,6 +25,18 @@ public class GameManager : MonoBehaviour
     {
         get => onDialogue;
         set => onDialogue = value;
+    }
+
+    public bool IsAttacking
+    {
+        get => isAttacking;
+        set => isAttacking = value;
+    }
+
+    public bool IsGettingKnockback
+    {
+        get => isGettingKnockback;
+        set => isGettingKnockback = value;
     }
 
     public bool FoundRat

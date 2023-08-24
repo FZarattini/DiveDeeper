@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
     [Title("References")]
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _spriteRenderer;
-    [SerializeField] Rigidbody2D _rigidBody;
+    [SerializeField] protected Rigidbody2D _rigidBody;
 
 
     [SerializeField] CharacterAnimationStates defaultState;
@@ -27,8 +27,16 @@ public class CharacterController : MonoBehaviour
     }
 
     // Moves the character based on the movement vector and speed
-    public void MoveCharacter(Vector2 moveVector, float speed)
+    public virtual void MoveCharacter(Vector2 moveVector, float speed)
     {
+        if (GameManager.Instance.IsAttacking)
+        {
+            _rigidBody.velocity = Vector2.zero;
+
+            HandleAttackAnimation();
+            return;
+        }
+
         _rigidBody.velocity = moveVector * speed;
 
         if (_rigidBody.velocity == Vector2.zero || GameManager.Instance.OnDialogue)
@@ -65,16 +73,19 @@ public class CharacterController : MonoBehaviour
 
             case CharacterAnimationStates.WALK_HORIZONTAL:
             case CharacterAnimationStates.PUSH_HORIZONTAL:
+            case CharacterAnimationStates.ATTACK_HORIZONTAL:
                 ChangeAnimatorState(CharacterAnimationStates.IDLE_HORIZONTAL);
                 break;
 
             case CharacterAnimationStates.WALK_UP:
             case CharacterAnimationStates.PUSH_UP:
+            case CharacterAnimationStates.ATTACK_UP:
                 ChangeAnimatorState(CharacterAnimationStates.IDLE_UP);
                 break;
 
             case CharacterAnimationStates.WALK_DOWN:
             case CharacterAnimationStates.PUSH_DOWN:
+            case CharacterAnimationStates.ATTACK_DOWN:
                 ChangeAnimatorState(CharacterAnimationStates.IDLE_DOWN);
                 break;
 
@@ -92,6 +103,7 @@ public class CharacterController : MonoBehaviour
         {
             case CharacterAnimationStates.WALK_HORIZONTAL:
             case CharacterAnimationStates.PUSH_HORIZONTAL:
+            case CharacterAnimationStates.ATTACK_HORIZONTAL:
 
                 if (_rigidBody.velocity.x == 0 && _rigidBody.velocity.y != 0)
                 {
@@ -113,6 +125,7 @@ public class CharacterController : MonoBehaviour
 
             case CharacterAnimationStates.WALK_UP:
             case CharacterAnimationStates.PUSH_UP:
+            case CharacterAnimationStates.ATTACK_UP:
 
                 if (_rigidBody.velocity.y == 0 && _rigidBody.velocity.x != 0)
                 {
@@ -131,6 +144,7 @@ public class CharacterController : MonoBehaviour
 
             case CharacterAnimationStates.WALK_DOWN:
             case CharacterAnimationStates.PUSH_DOWN:
+            case CharacterAnimationStates.ATTACK_DOWN:
 
                 if (_rigidBody.velocity.y == 0 && _rigidBody.velocity.x != 0)
                 {
@@ -186,6 +200,36 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    private void HandleAttackAnimation()
+    {
+        switch (currentState)
+        {
+            case CharacterAnimationStates.IDLE_HORIZONTAL:
+            case CharacterAnimationStates.WALK_HORIZONTAL:
+            case CharacterAnimationStates.PUSH_HORIZONTAL:
+
+                ChangeAnimatorState(CharacterAnimationStates.ATTACK_HORIZONTAL);
+
+                break;
+
+            case CharacterAnimationStates.IDLE_UP:
+            case CharacterAnimationStates.WALK_UP:
+            case CharacterAnimationStates.PUSH_UP:
+
+                ChangeAnimatorState(CharacterAnimationStates.ATTACK_UP);
+
+                break;
+
+            case CharacterAnimationStates.IDLE_DOWN:
+            case CharacterAnimationStates.WALK_DOWN:
+            case CharacterAnimationStates.PUSH_DOWN:
+
+                ChangeAnimatorState(CharacterAnimationStates.ATTACK_DOWN);
+
+                break;
+        }
+    }
+
     // Changes the character animation based on the new state
     void ChangeAnimatorState(CharacterAnimationStates newState)
     {
@@ -238,4 +282,7 @@ public enum CharacterAnimationStates
     PUSH_UP,
     PUSH_HORIZONTAL,
     PUSH_DOWN,
+    ATTACK_UP,
+    ATTACK_HORIZONTAL,
+    ATTACK_DOWN,
 }
