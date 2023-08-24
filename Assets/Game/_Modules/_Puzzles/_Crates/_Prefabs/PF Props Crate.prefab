@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2577585254280797811}
   - component: {fileID: 2577585254280797808}
-  m_Layer: 20
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2577585254963922479}
   - component: {fileID: 638376392282522792}
   - component: {fileID: 612545077776015070}
-  m_Layer: 20
+  m_Layer: 0
   m_Name: PF Props Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

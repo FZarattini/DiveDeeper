@@ -9,15 +9,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8150476868300563375}
+  - component: {fileID: 7729947377502271556}
+  - component: {fileID: 8047499175720075171}
   - component: {fileID: 8150476868300563374}
   - component: {fileID: 8150476868300563360}
   - component: {fileID: 8150476868300563361}
-  - component: {fileID: 8047499175720075171}
   - component: {fileID: 769339969180837806}
   - component: {fileID: 5235595719463486833}
-  m_Layer: 20
+  m_Layer: 0
   m_Name: PF Props Crate Small
-  m_TagString: Untagged
+  m_TagString: CratePuzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,6 +39,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7729947377502271556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150476868300563372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef9fb9f78c2be4cb2ba29eb97c1a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8047499175720075171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150476868300563372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f066b713d776a144ae70e6a5b4ae670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBePushed: 1
+  playerRB: {fileID: 0}
+  playerConstraints: 0
 --- !u!212 &8150476868300563374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -162,21 +190,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8047499175720075171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8150476868300563372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f066b713d776a144ae70e6a5b4ae670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePushed: 1
-  playerRB: {fileID: 0}
-  playerConstraints: 0
 --- !u!114 &769339969180837806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8150476868737220288}
   - component: {fileID: 8150476868737220291}
-  m_Layer: 20
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
