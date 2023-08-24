@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8150476868300563360}
   - component: {fileID: 8150476868300563361}
   - component: {fileID: 8047499175720075171}
+  - component: {fileID: 769339969180837806}
+  - component: {fileID: 5235595719463486833}
   m_Layer: 20
   m_Name: PF Props Crate Small
   m_TagString: Untagged
@@ -120,10 +122,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0048651695, y: 0.5285039}
+  m_Offset: {x: -0.0048651695, y: -0.14}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.8125, y: 1.21875}
     newSize: {x: 0.8125, y: 1.21875}
     adaptiveTilingThreshold: 0.5
@@ -175,6 +177,30 @@ MonoBehaviour:
   canBePushed: 1
   playerRB: {fileID: 0}
   playerConstraints: 0
+--- !u!114 &769339969180837806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150476868300563372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02434a97dd8ff849b4ee2400cd3ead2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!210 &5235595719463486833
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150476868300563372}
+  m_Enabled: 1
+  m_SortingLayerID: -363362617
+  m_SortingLayer: 8
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8150476868737220289
 GameObject:
   m_ObjectHideFlags: 0
