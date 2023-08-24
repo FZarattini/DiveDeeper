@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
+  m_Name: OldMan_QuestDialogue
+  m_EditorClassIdentifier: 
+  dialogueText:
+  - Good mornin... Oh, the old missus told I needed help?
+  - That old coot, she didn't have to do that..
+  - Well, I didn't wanna bother you. But since you are here..
+  - Would you mind helping me sorting out the boxes in my basement? It's been a mess
+    down there for ages now.
+  - But my back don't let me get down the stairs anymore. If you go down there, just
+    push the small boxes to the free spaces. If you somehow get stuck, just get on
+    the blue spot on the ground and press 'E' to reset the boxes.
+  writeSpeed: 0.01
+  completed: 0

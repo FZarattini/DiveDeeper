@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using Unity.VisualScripting;
 using Doozy.Runtime.UIManager.Containers;
 using UnityEngine;
@@ -14,14 +13,14 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
 
     [Title("References")]
-    [SerializeField, Sirenix.OdinInspector.ReadOnly] DialogueSO currentDialogue;
+    [SerializeField, ReadOnly] DialogueSO currentDialogue;
     [SerializeField] UIContainer _dialogueContainer;
     [SerializeField] TextMeshProUGUI _dialogueText;
 
     [Title("Control")]
     [SerializeField, HideInInspector] int dialogueIndex = 0;
-    [SerializeField, Sirenix.OdinInspector.ReadOnly] bool writingLine;
-    [SerializeField, Sirenix.OdinInspector.ReadOnly] bool choicesEnabled;
+    [SerializeField, ReadOnly] bool writingLine;
+    [SerializeField, ReadOnly] bool choicesEnabled;
 
     Action currentCallback = null;
 
@@ -45,11 +44,13 @@ public class DialogueManager : MonoBehaviour
     private void OnEnable()
     {
         PlayerInputHandler.OnNextDialog += CheckNextLine;
+        DialogueTrigger.OnDialogueInteracted += StartDialogueRoutine;
     }
 
     private void OnDisable()
     {
         PlayerInputHandler.OnNextDialog -= CheckNextLine;
+        DialogueTrigger.OnDialogueInteracted -= StartDialogueRoutine;
     }
 
 

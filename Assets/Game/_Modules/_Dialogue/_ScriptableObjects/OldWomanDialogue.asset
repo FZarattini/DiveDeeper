@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
+  m_Name: OldWomanDialogue
+  m_EditorClassIdentifier: 
+  dialogueText:
+  - Hello dear..
+  - Haven't seen you in awhile..
+  - Say, would you be able to do this old woman a little favor?
+  - In fact, is my husband who is in need of some help. He is in front of our house,
+    on the other end of the village. Could you go speak with him please?
+  writeSpeed: 0.01
+  completed: 0

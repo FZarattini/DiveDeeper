@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Title("GameStates")]
     [SerializeField, ReadOnly] bool onDialogue = false;
     [SerializeField, ReadOnly] bool onPlayerChoice = false;
+    [SerializeField, ReadOnly] bool foundRat = false;
 
     [Title("Global Values")]
 
@@ -22,6 +23,12 @@ public class GameManager : MonoBehaviour
     {
         get => onDialogue;
         set => onDialogue = value;
+    }
+
+    public bool FoundRat
+    {
+        get => foundRat;
+        set => foundRat = value;
     }
 
     private void Awake()
