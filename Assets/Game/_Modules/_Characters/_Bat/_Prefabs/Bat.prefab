@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2577762692786646860
 MonoBehaviour:
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2563e0d8429510441951d596229c5cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionRange: 5
 --- !u!114 &484858300562529848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +64,7 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   followDistance: 0.1
   followSpeed: 1.5
+  enableFollow: 0
 --- !u!212 &8486598772487139465
 SpriteRenderer:
   m_ObjectHideFlags: 0

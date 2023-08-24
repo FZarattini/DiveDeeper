@@ -1,4 +1,5 @@
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class FollowTarget : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class FollowTarget : MonoBehaviour
     private Vector2 directionToTarget;
     private float distanceToTarget;
 
+    [SerializeField, ReadOnly] bool enableFollow = false;
+
+    public bool FollowEnabled => enableFollow;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -19,6 +24,9 @@ public class FollowTarget : MonoBehaviour
 
     private void Update()
     {
+
+        if (!enableFollow) return;
+
         LookDirection();
 
         distanceToTarget = Vector2.Distance(followTarget.position, transform.position);
@@ -35,5 +43,10 @@ public class FollowTarget : MonoBehaviour
         directionToTarget = followTarget.position - transform.position;
 
         spriteRenderer.flipX = directionToTarget.x < 0;
+    }
+
+    public void EnableFollow(bool value)
+    {
+        enableFollow = value;
     }
 }
