@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private Animator animator;
+    private Collider2D mainCollider;
+
+    private FollowTarget followTarget;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        mainCollider = GetComponent<Collider2D>();
+
+        followTarget = GetComponent<FollowTarget>();
+    }
+
     private void TakeDamage()
     {
-        Destroy(gameObject);
+        followTarget.enabled = false;
+        mainCollider.enabled = false;
+        animator.SetTrigger("Death");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
