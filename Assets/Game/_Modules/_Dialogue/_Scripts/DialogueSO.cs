@@ -26,4 +26,5 @@ public enum Characters
     Maxwell,
     Squeaker,
     Rat,
+    Diary,
 }
