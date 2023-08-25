@@ -238,6 +238,11 @@ public class CharacterController : MonoBehaviour
         _animator.Play(newState.ToString());
         _CharacterEquipmentController.ChangeClothesAnimatorState(newState);
 
+        if (newState == CharacterAnimationStates.ATTACK_HORIZONTAL
+            || newState == CharacterAnimationStates.ATTACK_UP
+            || newState == CharacterAnimationStates.ATTACK_DOWN)
+            _CharacterEquipmentController.PlayWeaponAnimation(newState);
+
         currentState = newState;
     }
 
