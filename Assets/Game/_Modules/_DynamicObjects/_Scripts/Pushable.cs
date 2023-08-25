@@ -25,12 +25,24 @@ public class Pushable : MonoBehaviour
         playerRB = player.GetComponent<Rigidbody2D>();
         if(playerRB == null) return;
 
-        SavePlayerConstraints();
+        //SavePlayerConstraints();
 
         if (player != null)
         {
             pushDirection = (player.transform.position - transform.position).normalized;
+
             if (Mathf.Abs(pushDirection.x) > Mathf.Abs(pushDirection.y))
+            {
+
+                    rgbd.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            }
+            else
+            {
+
+                    rgbd.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            }
+
+            /*if (Mathf.Abs(pushDirection.x) > Mathf.Abs(pushDirection.y))
             {
                 if (playerRB.velocity.x != 0)
                 {
@@ -45,7 +57,7 @@ public class Pushable : MonoBehaviour
                     rgbd.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
                     playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
                 }
-            }
+            }*/
 
             player.PushDirection = pushDirection;
         }
@@ -57,7 +69,7 @@ public class Pushable : MonoBehaviour
         if (player != null)
         {
             rgbd.constraints = RigidbodyConstraints2D.FreezeRotation;
-            ReloadConstraints();
+            //ReloadConstraints();
 
             player.PushDirection = Vector2.zero;
         }
