@@ -6,12 +6,17 @@ using UnityEngine;
 
 public class PlayerController : CharacterController
 {
+    [SerializeField] private bool canAttack;
+
     [SerializeField] private Collider2D attackCollider;
 
     [SerializeField, Range(0, 100)] private float knockbackForce;
 
     public void Attack()
     {
+        if (!canAttack)
+            return;
+
         StartCoroutine(PerformAttack());
     }
 

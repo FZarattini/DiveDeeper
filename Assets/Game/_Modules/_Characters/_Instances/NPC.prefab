@@ -35,7 +35,7 @@ Transform:
   - {fileID: 1640156994693810496}
   - {fileID: 4494550908212107361}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7944154746459977494
 Rigidbody2D:
@@ -187,6 +187,8 @@ GameObject:
   - component: {fileID: 1640156994693810496}
   - component: {fileID: 278822300540470861}
   - component: {fileID: 8686555494652849081}
+  - component: {fileID: 397499805525071946}
+  - component: {fileID: 8601544438300237441}
   m_Layer: 0
   m_Name: PlayerVIsuals
   m_TagString: Untagged
@@ -284,6 +286,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &397499805525071946
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178058488112279593}
+  m_Enabled: 1
+  m_SortingLayerID: -363362617
+  m_SortingLayer: 8
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+--- !u!114 &8601544438300237441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178058488112279593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02434a97dd8ff849b4ee2400cd3ead2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2318505663536562667
 GameObject:
   m_ObjectHideFlags: 0

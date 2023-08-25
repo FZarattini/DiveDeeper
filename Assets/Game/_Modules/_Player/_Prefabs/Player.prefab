@@ -252,6 +252,7 @@ MonoBehaviour:
   currentState: 0
   _CharacterEquipmentController: {fileID: 6264056834458030830}
   PushDirection: {x: 0, y: 0}
+  canAttack: 0
   attackCollider: {fileID: 6991281795547882972}
   knockbackForce: 10
 --- !u!114 &6264056834458030830
