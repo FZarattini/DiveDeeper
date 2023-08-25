@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: Rat_Dialogue01
+  m_Name: MarloweDialogue
   m_EditorClassIdentifier: 
-  character: 11
+  character: 8
   dialogueText:
-  - Squeak! squeak!
+  - I just love this little lake. Do you think the water in the sacred alter comes
+    from here?
   writeSpeed: 0.01
   completed: 0

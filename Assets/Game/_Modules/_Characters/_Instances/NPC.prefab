@@ -99,6 +99,7 @@ MonoBehaviour:
   _bodyObj: {fileID: 0}
   _hatAnimator: {fileID: 8926762914493148466}
   _bodyAnimator: {fileID: 5649420194833921000}
+  _weaponAnimator: {fileID: 0}
 --- !u!61 &446593613705900328
 BoxCollider2D:
   m_ObjectHideFlags: 0

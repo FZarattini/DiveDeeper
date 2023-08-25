@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: Rat_Dialogue01
+  m_Name: JimmyDialogue
   m_EditorClassIdentifier: 
-  character: 11
+  character: 1
   dialogueText:
-  - Squeak! squeak!
+  - I head the grown ups talking about the cave the other day.
+  - They were saying  part of it runs below the village.
+  - I couldn't sleep since..
   writeSpeed: 0.01
   completed: 0

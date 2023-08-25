@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: Rat_Dialogue01
+  m_Name: MaryDialogue
   m_EditorClassIdentifier: 
-  character: 11
+  character: 4
   dialogueText:
-  - Squeak! squeak!
+  - Hello dear..
+  - Haven't seen you in awhile..
+  - Say, would you be able to do this old woman a little favor?
+  - In fact, is my husband who is in need of some help. He is in front of our house,
+    on the other end of the village. Could you go speak with him please?
   writeSpeed: 0.01
   completed: 0

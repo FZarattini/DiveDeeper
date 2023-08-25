@@ -113,4 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9676307e510d19d42953e38419aa69b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAutoTrigger: 0
   _dialogue: {fileID: 11400000, guid: 763fc70d1ef5e804ab2443f782197baa, type: 2}
+  canShowDialogue: 0

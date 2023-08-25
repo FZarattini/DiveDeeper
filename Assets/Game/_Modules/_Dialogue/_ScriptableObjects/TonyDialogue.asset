@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: Rat_Dialogue01
+  m_Name: TonyDialogue
   m_EditorClassIdentifier: 
-  character: 11
+  character: 2
   dialogueText:
-  - Squeak! squeak!
+  - We've been snucking into grampas' basement to play.
+  - It's a real mess of boxes in there, but there is also a really cool treasure!
   writeSpeed: 0.01
   completed: 0

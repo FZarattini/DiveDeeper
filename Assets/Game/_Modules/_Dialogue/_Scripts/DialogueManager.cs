@@ -7,6 +7,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine.PlayerLoop;
+using System.Text.RegularExpressions;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField, ReadOnly] DialogueSO currentDialogue;
     [SerializeField] UIContainer _dialogueContainer;
     [SerializeField] TextMeshProUGUI _dialogueText;
+    [SerializeField] TextMeshProUGUI _characterName;
 
     [Title("Control")]
     [SerializeField, HideInInspector] int dialogueIndex = 0;
@@ -65,6 +67,11 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = 0;
         else
             dialogueIndex = dialogue.dialogueText.Count - 1;
+
+        if (dialogue.character != Characters.None)
+            _characterName.text = System.Text.RegularExpressions.Regex.Replace(dialogue.character.ToString(), "([A-Z])", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim();
+        else
+            _characterName.gameObject.SetActive(false);
 
         _dialogueText.text = string.Empty;
         currentCallback = callback;

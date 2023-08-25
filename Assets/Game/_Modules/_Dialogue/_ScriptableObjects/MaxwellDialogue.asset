@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: Rat_Dialogue01
+  m_Name: MaxwellDialogue
   m_EditorClassIdentifier: 
-  character: 11
+  character: 9
   dialogueText:
-  - Squeak! squeak!
+  - Sorry man, the store is closed until the new stock arrives!
   writeSpeed: 0.01
   completed: 0

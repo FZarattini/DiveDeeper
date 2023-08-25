@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
+  m_Name: FatherTravisDialogue
+  m_EditorClassIdentifier: 
+  character: 6
+  dialogueText:
+  - Good Morning. I've come to pray to the sacred altar for the village's blessing!
+  - Our village was built around it and legend says it is bottomless!
+  - There's a legend that says if someone dives in it they would reach enlightenment!
+  - Of course no one has ever done it before. We believe it is sacred and only drink
+    from it.
+  - It would be heresy to sully these waters with our bodies..
+  writeSpeed: 0.01
+  completed: 0

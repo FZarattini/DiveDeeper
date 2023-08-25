@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87cdf9a7ab513641b6ee292750ba863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAutoTrigger: 0
   _dialogue: {fileID: 11400000, guid: 3ef87f3939a2b464faba2c9066d82f11, type: 2}
+  canShowDialogue: 0
   _secondDialogue: {fileID: 11400000, guid: 1d9dab0e03f5b0248ad5ea49596e1e42, type: 2}
   _currentDialogue: {fileID: 0}
   _closedBasementEntrance: {fileID: 0}

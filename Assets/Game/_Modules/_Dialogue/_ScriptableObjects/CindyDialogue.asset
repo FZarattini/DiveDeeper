@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: OldManDialogue
+  m_Name: CindyDialogue
   m_EditorClassIdentifier: 
+  character: 3
   dialogueText:
-  - Good morning, boy! Finally decided to leave that room of yours, did you?
+  - I always hear a weird noise coming from old man Hugh's basement.
+  - Do you think it's a monster like the ones in the old cave?
   writeSpeed: 0.01
   completed: 0
