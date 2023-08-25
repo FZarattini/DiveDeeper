@@ -15,6 +15,9 @@ public class Item : MonoBehaviour, IInteractables
 
     private void LoadItem()
     {
+        if (itemData == null)
+            return;
+
         name = itemData.Name;
         spriteRenderer.sprite = itemData.Icon;
     }

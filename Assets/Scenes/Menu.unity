@@ -7884,7 +7884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f8e3953c64c2943b5be7109fdc5076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: Village
+  gameScene: House
 --- !u!1 &917548346
 GameObject:
   m_ObjectHideFlags: 0
@@ -9588,7 +9588,7 @@ Tilemap:
       - {fileID: -1700149752, guid: 0e53a65579725754186a158590dd9d44, type: 3}
       - {fileID: -253067248, guid: 0e53a65579725754186a158590dd9d44, type: 3}
       - {fileID: 1889070566, guid: 0e53a65579725754186a158590dd9d44, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
