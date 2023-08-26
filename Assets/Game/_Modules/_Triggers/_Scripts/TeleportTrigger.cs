@@ -7,8 +7,13 @@ public class TeleportTrigger : MonoBehaviour
 {
     [SerializeField] string sceneName;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        LoadScene();
     }
 }

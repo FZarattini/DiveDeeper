@@ -42,6 +42,7 @@ public class CharacterController : MonoBehaviour
         if (_rigidBody.velocity == Vector2.zero || GameManager.Instance.OnDialogue)
         {
             PushDirection = Vector2.zero;
+
             if (!IsIdleState())
                 SetIdle();
         }
@@ -59,6 +60,17 @@ public class CharacterController : MonoBehaviour
             SetDirection();
         }
 
+    }
+
+    private void Update()
+    {
+        if (GameManager.Instance.OnDialogue)
+        {
+            _rigidBody.velocity = Vector2.zero;
+
+            if (!IsIdleState())
+                SetIdle();
+        }
     }
 
     // Chooses which Idle animation should be played based on the players last movement
