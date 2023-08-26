@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7668683970457797530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5384149934659800426}
   - component: {fileID: 2538865720246235573}
   - component: {fileID: 1456216313406682500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: char_a_p1_1out_pfpn_v02_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 5555088816985510960}
   - component: {fileID: 4737374129038223885}
   - component: {fileID: 7359325662301348882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 486333849001403695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 8790861472355929477}
   - component: {fileID: 5563647391571012322}
   - component: {fileID: 7276262867094073409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: char_a_p2_6tla_farm_v01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 1091501961751067580}
   - component: {fileID: 1968133050388641882}
   - component: {fileID: 5350366182337928925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: char_a_p1_4har_spk2_v05_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5400490966143045342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HairAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 8737498139494768363}
   - component: {fileID: 4778001400292561095}
   - component: {fileID: 2814870717246092171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerVIsuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1798109873582522439}
   - component: {fileID: 6991281795547882972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackCollider
   m_TagString: Attack
   m_Icon: {fileID: 0}
