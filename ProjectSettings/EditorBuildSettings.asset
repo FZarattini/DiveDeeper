@@ -12,11 +12,26 @@ EditorBuildSettings:
     path: Assets/Scenes/House.unity
     guid: 4efeca0ce4a8dc44c8c51263df04f1fc
   - enabled: 1
+    path: Assets/Scenes/House1.5.unity
+    guid: 7cc3a797ad3fb4f429e09c4b6b144655
+  - enabled: 1
     path: Assets/Scenes/House2.unity
     guid: aba3ee5a046ae61419804d2640463468
   - enabled: 1
+    path: Assets/Scenes/House2.5.unity
+    guid: 8e0b0c0de856a4443a94fde47e135aa4
+  - enabled: 1
+    path: Assets/Scenes/House3.unity
+    guid: a633c50ff2ae1c54d841894b1e5c4285
+  - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Village2.unity
+    guid: 7a1e80049b920cc47a48c735e85af211
+  - enabled: 1
+    path: Assets/Scenes/Village3.unity
+    guid: b8b71f53387c904489008f4f50133b4d
   - enabled: 1
     path: Assets/Scenes/Basement.unity
     guid: ba90235b352f07e4da0407ccede1c1cf
@@ -26,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cave2.unity
     guid: 16cfd4bb3f166b74881ee83c0784d8a8
+  - enabled: 1
+    path: Assets/Scenes/Graveyard.unity
+    guid: ac78729aa6c24cb45aa651208fac1824
+  - enabled: 1
+    path: Assets/Scenes/Harbor.unity
+    guid: 62526d6377fef8147abf1bae99a59b3b
   m_configObjects: {}
