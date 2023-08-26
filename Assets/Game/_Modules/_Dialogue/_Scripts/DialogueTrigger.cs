@@ -25,6 +25,11 @@ public class DialogueTrigger : MonoBehaviour, IInteractables
         OnDialogueInteracted?.Invoke(_dialogue, null);
     }
 
+    public void PlayDialogue(Action callback)
+    {
+        OnDialogueInteracted?.Invoke(_dialogue, callback);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isAutoTrigger || !canShowDialogue) return;

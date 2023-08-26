@@ -10226,6 +10226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587877621}
   - component: {fileID: 1587877622}
+  - component: {fileID: 1587877623}
   m_Layer: 0
   m_Name: InteractableTeleport
   m_TagString: Untagged
@@ -10293,6 +10294,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.912919, y: 0.7059661}
   m_EdgeRadius: 0
+--- !u!114 &1587877623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587877620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b871fd2bc225f94ea5bdef7d8a88672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Graveyard
 --- !u!1001 &1642820245
 PrefabInstance:
   m_ObjectHideFlags: 0

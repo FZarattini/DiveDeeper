@@ -44,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 1837581079
+    locked: 0
+  - name: Dirt
+    uniqueID: 1216830273
+    locked: 0
   - name: Floor
     uniqueID: 2327757947
     locked: 0
