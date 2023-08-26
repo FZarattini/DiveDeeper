@@ -69,7 +69,10 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = dialogue.dialogueText.Count - 1;
 
         if (dialogue.character != Characters.None)
+        {
+            _characterName.gameObject.SetActive(true);
             _characterName.text = System.Text.RegularExpressions.Regex.Replace(dialogue.character.ToString(), "([A-Z])", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim();
+        }
         else
             _characterName.gameObject.SetActive(false);
 
