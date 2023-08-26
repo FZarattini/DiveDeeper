@@ -64,6 +64,9 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (_rigidBody.bodyType == RigidbodyType2D.Static)
+            return;
+
         if (GameManager.Instance.OnDialogue)
         {
             _rigidBody.velocity = Vector2.zero;
@@ -113,11 +116,12 @@ public class CharacterController : MonoBehaviour
     {
         switch (currentState)
         {
+            case CharacterAnimationStates.IDLE_HORIZONTAL:
             case CharacterAnimationStates.WALK_HORIZONTAL:
             case CharacterAnimationStates.PUSH_HORIZONTAL:
             case CharacterAnimationStates.ATTACK_HORIZONTAL:
 
-                if (_rigidBody.velocity.x == 0 && _rigidBody.velocity.y != 0)
+                if (Mathf.Abs(_rigidBody.velocity.x) < Mathf.Abs(_rigidBody.velocity.y) && _rigidBody.velocity.y != 0)
                 {
                     if (_rigidBody.velocity.y > 0)
                     {
@@ -135,11 +139,12 @@ public class CharacterController : MonoBehaviour
 
                 break;
 
+            case CharacterAnimationStates.IDLE_UP:
             case CharacterAnimationStates.WALK_UP:
             case CharacterAnimationStates.PUSH_UP:
             case CharacterAnimationStates.ATTACK_UP:
 
-                if (_rigidBody.velocity.y == 0 && _rigidBody.velocity.x != 0)
+                if (Mathf.Abs(_rigidBody.velocity.x) > Mathf.Abs(_rigidBody.velocity.y) && _rigidBody.velocity.x != 0)
                 {
                     ChangeAnimatorState(CharacterAnimationStates.WALK_HORIZONTAL);
                 }
@@ -154,11 +159,12 @@ public class CharacterController : MonoBehaviour
 
                 break;
 
+            case CharacterAnimationStates.IDLE_DOWN:
             case CharacterAnimationStates.WALK_DOWN:
             case CharacterAnimationStates.PUSH_DOWN:
             case CharacterAnimationStates.ATTACK_DOWN:
 
-                if (_rigidBody.velocity.y == 0 && _rigidBody.velocity.x != 0)
+                if (Mathf.Abs(_rigidBody.velocity.x) > Mathf.Abs(_rigidBody.velocity.y) && _rigidBody.velocity.x != 0)
                 {
                     ChangeAnimatorState(CharacterAnimationStates.WALK_HORIZONTAL);
                 }
@@ -173,13 +179,13 @@ public class CharacterController : MonoBehaviour
 
                 break;
 
-            case CharacterAnimationStates.IDLE_HORIZONTAL:
-            case CharacterAnimationStates.IDLE_DOWN:
-            case CharacterAnimationStates.IDLE_UP:
+            //case CharacterAnimationStates.IDLE_HORIZONTAL:
+            //case CharacterAnimationStates.IDLE_DOWN:
+            //case CharacterAnimationStates.IDLE_UP:
 
-                ChangeAnimatorState(CharacterAnimationStates.WALK_HORIZONTAL);
+            //    ChangeAnimatorState(CharacterAnimationStates.WALK_HORIZONTAL);
 
-                break;
+            //    break;
 
             default:
                 break;

@@ -9,6 +9,8 @@ public class ChaseCutscene : MonoBehaviour
     [SerializeField] private CharacterController player;
     [SerializeField] private CharacterController characterFleeing;
 
+    [SerializeField] private Tony_DialogueTrigger tony_DialogueTrigger;
+
     [SerializeField, Range(0, 5)] private float distanceToFlee;
 
     [SerializeField] private FollowTarget rat;
@@ -23,12 +25,17 @@ public class ChaseCutscene : MonoBehaviour
     private float distanceToPlayer;
 
     [ContextMenu("START")]
-    private void MoveToInitialPosition()
+    public void StartChase()
     {
-        MoveToPosition(initialPoint.position).OnComplete(StealRat);
+        MoveToInitialPosition();
     }
 
-    private void StealRat()
+    private void MoveToInitialPosition()
+    {
+        MoveToPosition(initialPoint.position).OnComplete(() => tony_DialogueTrigger.Interact());
+    }
+
+    public void StealRat()
     {
         rat.enabled = false;
 
@@ -48,7 +55,7 @@ public class ChaseCutscene : MonoBehaviour
         rat.gameObject.SetActive(true);
         caveEntranceMask.SetActive(true);
 
-        rat.transform.DOMoveY(throwRatPoint.position.y, 1f).SetEase(Ease.InBack).OnComplete(()=>
+        rat.transform.DOMoveY(throwRatPoint.position.y, 1f).SetEase(Ease.InBack).OnComplete(() =>
         {
             caveEntranceMask.SetActive(false);
             rat.gameObject.SetActive(false);
