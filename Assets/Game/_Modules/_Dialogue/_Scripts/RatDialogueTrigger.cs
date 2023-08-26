@@ -1,3 +1,4 @@
+using Doozy.Runtime.UIManager.Containers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +8,19 @@ public class RatDialogueTrigger : DialogueTrigger
 {
     [SerializeField] private string loadSceneName;
 
+    [SerializeField] private UIContainer container;
+
     public override void Interact()
     {
-        OnDialogueInteracted?.Invoke(_dialogue, LoadScene);
+        OnDialogueInteracted?.Invoke(_dialogue, Fade);
     }
 
-    private void LoadScene()
+    private void Fade()
+    {
+        container.Show();
+    }
+
+    public void LoadScene()
     {
         SceneManager.LoadScene(loadSceneName);
     }
