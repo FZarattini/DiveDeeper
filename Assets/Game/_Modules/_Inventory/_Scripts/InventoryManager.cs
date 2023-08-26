@@ -8,9 +8,14 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private List<InventorySlot> slots = new List<InventorySlot>();
 
+    [SerializeField] int itemsInInventory;
+
+    public int ItemsInInventory => itemsInInventory;
+
     private void Awake()
     {
         Instance = this;
+        itemsInInventory = 0;
     }
 
     public void AddItem(ItemData item)
@@ -26,6 +31,7 @@ public class InventoryManager : MonoBehaviour
             else
             {
                 slot.AddItem(item);
+                itemsInInventory++;
             }
         }
     }

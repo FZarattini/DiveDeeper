@@ -12,6 +12,8 @@ public class PlayerController : CharacterController
 
     [SerializeField, Range(0, 100)] private float knockbackForce;
 
+    [SerializeField] AudioSource _attackAudioSource;
+
     public void Attack()
     {
         if (!canAttack)
@@ -26,6 +28,7 @@ public class PlayerController : CharacterController
         {
             GameManager.Instance.IsAttacking = true;
             attackCollider.enabled = true;
+            _attackAudioSource.Play();
 
             yield return new WaitForSeconds(0.5f);
 

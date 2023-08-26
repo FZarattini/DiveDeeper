@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class Item : MonoBehaviour, IInteractables
     [SerializeField] private ItemData itemData;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    public static Action OnItemPickUP;
 
     private void Awake()
     {
@@ -25,6 +28,8 @@ public class Item : MonoBehaviour, IInteractables
     public void Interact()
     {
         InventoryManager.Instance.AddItem(itemData);
+
+        OnItemPickUP?.Invoke();
 
         Destroy(gameObject);
     }
