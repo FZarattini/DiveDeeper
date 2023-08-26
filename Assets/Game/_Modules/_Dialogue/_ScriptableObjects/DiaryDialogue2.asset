@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
   m_Name: DiaryDialogue2
   m_EditorClassIdentifier: 
-  character: 0
-  dialogueText: []
-  writeSpeed: 0
+  character: 12
+  dialogueText:
+  - 05/20 - It's been almost a month since I met Gizmo.
+  - We do everything together!
+  - I even made him a little hat! He looks very cute now!
+  - Yesterday we went swimming into the lake and it was tons of fun!
+  - I think today we will go to the village store and see if there's anything cool
+    to buy for Gizmo.
+  writeSpeed: 0.01
   completed: 0

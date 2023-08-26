@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
   m_Name: DiaryDialogue
   m_EditorClassIdentifier: 
-  character: 0
-  dialogueText: []
-  writeSpeed: 0
+  character: 12
+  dialogueText:
+  - 04/22 - I didn't do anything today. Maybe I should go out a little bit..
+  writeSpeed: 0.01
   completed: 0
