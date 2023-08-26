@@ -13,7 +13,7 @@ public class FollowTarget : MonoBehaviour
     private Vector2 directionToTarget;
     private float distanceToTarget;
 
-    [SerializeField, ReadOnly] bool enableFollow = false;
+    [SerializeField] bool enableFollow = false;
 
     public bool FollowEnabled => enableFollow;
 
