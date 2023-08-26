@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
+  m_Name: MaxwellQuestDialogue
+  m_EditorClassIdentifier: 
+  character: 9
+  dialogueText:
+  - Hey man. Sorry, The stock is gone again..
+  - The deliveries should be here now though, it is really not common for them to
+    delay like this.
+  - Say what. Could you go to the harbor and see if the goods are there yet? I will
+    give you something as payment for it, of course.
+  - Here, take this for protection. It's just a farming tool, but it hurts just as
+    much as an axe if you hit something in the head with it!
+  - Remember, you just need to click with your mouse to hit in front of you.
+  - To reach the harbor, just go through the village exit in the south!
+  writeSpeed: 0.01
+  completed: 1
