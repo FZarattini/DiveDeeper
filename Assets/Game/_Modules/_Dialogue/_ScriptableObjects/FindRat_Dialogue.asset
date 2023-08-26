@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818b2852d9d13f542a189ad841fb0098, type: 3}
-  m_Name: Gizmo_Dialogue02
+  m_Name: FindRat_Dialogue
   m_EditorClassIdentifier: 
   character: 0
   dialogueText:
-  - ...
-  - My friend...
-  - Don't leave me... please
+  - Hello little guy! Are you alone here?
+  - Aren't you the cutest little thing?!
+  - Do you want to be friends?
+  - Let's go back to my village together.
   writeSpeed: 0.01
-  completed: 1
+  completed: 0

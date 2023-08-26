@@ -10,6 +10,11 @@ public class DialogueSO : ScriptableObject
     public List<string> dialogueText;
     public float writeSpeed;
     [ReadOnly] public bool completed = false;
+
+    private void OnEnable()
+    {
+        completed = false;
+    }
 }
 
 public enum Characters
