@@ -14,6 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 12
   dialogueText:
-  - 08/12 - It's been almost a month since I met Gizmo.
+  - 05/30 - I still can't believe it happened.
+  - Father Travis said Gizmo was probably attacked by the monsters in the Cave.
+  - The other rats must have tried to save him and failed.
+  - 07/12 - People in the village come visit me sometimes. They keep trying to convince
+    me Tony is very ashamed of what he's done..
+  - He is just a kid, I don't really blame him..
+  - 08/25 - I keep having these dreams of all the moments we've had together. Of
+    what happened..
+  - It is hard, but it also makes it easier..
+  - The more I dive into my own memories, I realize how it was a blessing having
+    met you..
   writeSpeed: 0.01
   completed: 0
