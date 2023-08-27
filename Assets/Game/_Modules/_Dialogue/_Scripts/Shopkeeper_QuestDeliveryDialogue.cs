@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopKeeper_QuestDeliveryDialogue : MonoBehaviour, IInteractables
+public class ShopKeeper_QuestDeliveryDialogue : DialogueTrigger, IInteractables
 {
-    [SerializeField] DialogueTrigger _dialogueTrigger;
     [SerializeField] ChaseCutscene _chaseCutscene;
 
-    public void Interact()
+    public override void Interact()
     {
-        _dialogueTrigger.PlayDialogue(ClearInventory);
+        PlayDialogue(ClearInventory);
     }
 
     public void ClearInventory()
