@@ -9,12 +9,11 @@ public class ChaseCutscene : MonoBehaviour
     [SerializeField] private CharacterController player;
     [SerializeField] private CharacterController characterFleeing;
 
-    [SerializeField] private Tony_DialogueTrigger tony_DialogueTrigger;
-
     [SerializeField, Range(0, 5)] private float distanceToFlee;
 
     [SerializeField] private FollowTarget rat;
     [SerializeField] private GameObject caveEntranceMask;
+    [SerializeField] private GameObject caveEntranceTrigger;
 
     [SerializeField] private Transform initialPoint;
     [SerializeField] private List<Transform> fleePoints;
@@ -23,6 +22,11 @@ public class ChaseCutscene : MonoBehaviour
 
     private bool isFleeing;
     private float distanceToPlayer;
+
+    [Header("DIALOGUE TRIGGERS")]
+    [SerializeField] private Tony_DialogueTrigger tony_DialogueTrigger;
+    [SerializeField] private Tony_DialogueTrigger tony_End_DialogueTrigger;
+    [SerializeField] private DialogueTrigger endChaseDialogue;
 
     [ContextMenu("START")]
     public void StartChase()
@@ -57,9 +61,18 @@ public class ChaseCutscene : MonoBehaviour
 
         rat.transform.DOMoveY(throwRatPoint.position.y, 1f).SetEase(Ease.InBack).OnComplete(() =>
         {
-            caveEntranceMask.SetActive(false);
             rat.gameObject.SetActive(false);
+
+            tony_End_DialogueTrigger.Interact();
         });
+    }
+
+
+    public void EndChaseDialogue()
+    {
+        endChaseDialogue.Interact();
+
+        caveEntranceTrigger.SetActive(true);
     }
 
     private Tween GoToNextFleePoint()
