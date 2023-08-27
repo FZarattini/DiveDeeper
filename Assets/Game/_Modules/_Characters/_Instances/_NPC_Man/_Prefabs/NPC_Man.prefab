@@ -14,19 +14,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337338752757887986, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Size.x
-      value: 3.189621
+      value: 1.69413
       objectReference: {fileID: 0}
     - target: {fileID: 2337338752757887986, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Size.y
-      value: 1.2993947
+      value: 1.8105116
       objectReference: {fileID: 0}
     - target: {fileID: 2337338752757887986, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Offset.x
-      value: 0.7017412
+      value: 1.4494867
       objectReference: {fileID: 0}
     - target: {fileID: 2337338752757887986, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Offset.y
-      value: 0.20229238
+      value: -0.05326605
       objectReference: {fileID: 0}
     - target: {fileID: 4332312891065761854, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_Sprite
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: ce1f9cfc718bd804a94e5a6487524bf8, type: 2}
     - target: {fileID: 6654032089104623918, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6654032089104623918, guid: 224e1e5b86900084e939dc2908b59a1d, type: 3}
       propertyPath: m_LocalPosition.x
