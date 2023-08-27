@@ -3,8 +3,6 @@ using Sirenix.OdinInspector;
 
 public class FollowTarget : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-
     [SerializeField] private Transform followTarget;
 
     [SerializeField, Range(0, 10)] private float followDistance;
@@ -17,15 +15,17 @@ public class FollowTarget : MonoBehaviour
 
     public bool FollowEnabled => enableFollow;
 
+    private float initialScale;
+
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        initialScale = transform.localScale.x;
     }
 
     private void Update()
     {
-
-        if (!enableFollow) return;
+        if (!enableFollow)
+            return;
 
         LookDirection();
 
@@ -42,7 +42,7 @@ public class FollowTarget : MonoBehaviour
     {
         directionToTarget = followTarget.position - transform.position;
 
-        spriteRenderer.flipX = directionToTarget.x < 0;
+        transform.localScale = new Vector3(Mathf.Sign(directionToTarget.x) * initialScale, transform.localScale.y, transform.localScale.z);
     }
 
     public void EnableFollow(bool value)

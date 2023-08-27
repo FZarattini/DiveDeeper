@@ -61,6 +61,7 @@ public class ChaseCutscene : MonoBehaviour
 
         rat.transform.DOMoveY(throwRatPoint.position.y, 1f).SetEase(Ease.InBack).OnComplete(() =>
         {
+            caveEntranceMask.SetActive(false);
             rat.gameObject.SetActive(false);
 
             tony_End_DialogueTrigger.Interact();
