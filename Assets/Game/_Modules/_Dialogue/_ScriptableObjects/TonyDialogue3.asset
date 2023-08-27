@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 2
   dialogueText:
-  - I'm tired of seeing this rat
-  - I'm going to get rid of it
+  - I'm tired of seeing this rat!
+  - I'm going to get rid of it!
   - Catch me if you can!
   writeSpeed: 0.01
   completed: 0
+  canRepeat: 0

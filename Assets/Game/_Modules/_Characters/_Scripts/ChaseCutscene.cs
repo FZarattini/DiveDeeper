@@ -64,7 +64,7 @@ public class ChaseCutscene : MonoBehaviour
             caveEntranceMask.SetActive(false);
             rat.gameObject.SetActive(false);
 
-            tony_End_DialogueTrigger.Interact();
+            DOVirtual.DelayedCall(1f, () => tony_End_DialogueTrigger.Interact());
         });
     }
 
