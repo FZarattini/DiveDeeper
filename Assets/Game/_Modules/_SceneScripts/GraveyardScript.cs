@@ -12,7 +12,7 @@ public class GraveyardScript : MonoBehaviour
     [SerializeField] DialogueTrigger _dialogueTrigger;
     [SerializeField] UIContainer _fadeContainer;
 
-    private void Awake()
+    private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         _audioSource.clip = _sadSong;

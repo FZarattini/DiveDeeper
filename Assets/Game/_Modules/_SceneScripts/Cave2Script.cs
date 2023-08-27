@@ -8,7 +8,7 @@ public class Cave2Script : MonoBehaviour
     [SerializeField, ReadOnly] AudioSource _audioSource;
     [SerializeField] AudioClip _sadSong;
 
-    private void Awake()
+    private void Start()
     {
         _audioSource = FindObjectOfType<AudioSource>();
 
