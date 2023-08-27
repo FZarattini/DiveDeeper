@@ -29,6 +29,9 @@ public class CharacterController : MonoBehaviour
     // Moves the character based on the movement vector and speed
     public virtual void MoveCharacter(Vector2 moveVector, float speed)
     {
+
+        if (_rigidBody == null) return;
+
         if (GameManager.Instance.IsAttacking)
         {
             _rigidBody.velocity = Vector2.zero;
