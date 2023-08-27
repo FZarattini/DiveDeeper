@@ -15,7 +15,7 @@ public class HouseScript : MonoBehaviour, IInteractables
 
     private void Start()
     {
-        SoundManager.Instance.ChangeClip(_clip);
+        //SoundManager.Instance.ChangeClip(_clip);
         StartCoroutine("HideFade");
     }
 
