@@ -6,6 +6,8 @@ public class Tony_DialogueTrigger : DialogueTrigger
 {
     [SerializeField] private ChaseCutscene chaseCutscene;
 
+    [SerializeField] private bool stealRat;
+
     public override void Interact()
     {
         OnDialogueInteracted?.Invoke(_dialogue, ContinueChase);
@@ -13,6 +15,13 @@ public class Tony_DialogueTrigger : DialogueTrigger
 
     private void ContinueChase()
     {
-        chaseCutscene.StealRat();
+        if (stealRat)
+        {
+            chaseCutscene.StealRat();
+        }
+        else
+        {
+            chaseCutscene.EndChaseDialogue();
+        }
     }
 }
