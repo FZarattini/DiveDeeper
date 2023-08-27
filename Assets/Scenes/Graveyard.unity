@@ -195,7 +195,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1967209349
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -14272,7 +14272,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 879319829
-  m_SortingLayer: 10
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15616,7 +15616,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1936958683
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -17775,6 +17775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c51a8d9539e0e428442083609e072f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
+  _sadSong: {fileID: 0}
   _dialogueTrigger: {fileID: 1351030645}
   _fadeContainer: {fileID: 1596765941}
 --- !u!114 &1351030645
@@ -18890,7 +18892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3456004148815820284, guid: 7a92c796b2d7d144fbdab2429fe8a3dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 3456004148815820284, guid: 7a92c796b2d7d144fbdab2429fe8a3dc, type: 3}
       propertyPath: m_LocalPosition.z

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 8
   dialogueText:
-  - I just love this little lake. Do you think the water in the sacred alter comes
+  - I just love this little lake. Do you think the water in the sacred altar comes
     from here?
   writeSpeed: 0.01
   completed: 0
+  canRepeat: 0
