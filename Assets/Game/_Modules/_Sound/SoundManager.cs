@@ -25,5 +25,6 @@ public class SoundManager : MonoBehaviour
     public void ChangeClip(AudioClip clip)
     {
         _audioSource.clip = clip;
+        _audioSource.Play();
     }
 }

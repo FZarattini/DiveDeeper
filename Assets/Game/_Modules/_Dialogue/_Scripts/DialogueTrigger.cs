@@ -9,7 +9,9 @@ public class DialogueTrigger : MonoBehaviour, IInteractables
 {
     [SerializeField] bool isAutoTrigger;
     [SerializeField] protected DialogueSO _dialogue;
-    [SerializeField, ReadOnly] bool canShowDialogue; 
+    [SerializeField, ReadOnly] bool canShowDialogue;
+    [SerializeField] bool autoDestroy;
+   
 
     public static Action<DialogueSO, Action> OnDialogueInteracted = null;
 
@@ -25,6 +27,11 @@ public class DialogueTrigger : MonoBehaviour, IInteractables
         OnDialogueInteracted?.Invoke(_dialogue, null);
     }
 
+    void AutoDestroy()
+    {
+        Destroy(gameObject);
+    }
+
     public void PlayDialogue(Action callback)
     {
         OnDialogueInteracted?.Invoke(_dialogue, callback);
@@ -35,7 +42,10 @@ public class DialogueTrigger : MonoBehaviour, IInteractables
         if (!isAutoTrigger || !canShowDialogue) return;
         canShowDialogue = false;
 
-        OnDialogueInteracted?.Invoke(_dialogue, null);
+        if(!autoDestroy)
+            OnDialogueInteracted?.Invoke(_dialogue, null);
+        else
+            OnDialogueInteracted?.Invoke(_dialogue, AutoDestroy);
 
     }
 

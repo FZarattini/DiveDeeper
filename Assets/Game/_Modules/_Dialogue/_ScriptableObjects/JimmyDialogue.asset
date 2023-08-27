@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 1
   dialogueText:
-  - I head the grown ups talking about the cave the other day.
+  - I heard the grown ups talking about the cave the other day.
   - They were saying  part of it runs below the village.
   - I couldn't sleep since..
   writeSpeed: 0.01
   completed: 0
+  canRepeat: 0

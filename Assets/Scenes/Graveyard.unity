@@ -17794,6 +17794,7 @@ MonoBehaviour:
   isAutoTrigger: 0
   _dialogue: {fileID: 11400000, guid: 0c4531196cf766d489d532a927b3299d, type: 2}
   canShowDialogue: 0
+  autoDestroy: 0
 --- !u!4 &1351030646
 Transform:
   m_ObjectHideFlags: 0
@@ -18871,6 +18872,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2077860207342084560, guid: 7a92c796b2d7d144fbdab2429fe8a3dc, type: 3}
+      propertyPath: _rigidBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077860207342084560, guid: 7a92c796b2d7d144fbdab2429fe8a3dc, type: 3}
       propertyPath: defaultState
       value: 0
       objectReference: {fileID: 0}
@@ -18926,7 +18931,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 613220056058214928, guid: 7a92c796b2d7d144fbdab2429fe8a3dc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
