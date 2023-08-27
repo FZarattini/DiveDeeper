@@ -11,9 +11,11 @@ public class HouseScript : MonoBehaviour, IInteractables
     [SerializeField] GameObject playerNormal;
     [SerializeField] GameObject playerLyingDown;
     [SerializeField] DialogueTrigger _dialogueTrigger;
+    [SerializeField] AudioClip _clip;
 
     private void Start()
     {
+        SoundManager.Instance.ChangeClip(_clip);
         StartCoroutine("HideFade");
     }
 

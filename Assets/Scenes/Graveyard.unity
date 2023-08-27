@@ -17776,7 +17776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 0}
-  _sadSong: {fileID: 0}
+  _sadSong: {fileID: 8300000, guid: 7e7cfefe75c87a74f86741f831476580, type: 3}
   _dialogueTrigger: {fileID: 1351030645}
   _fadeContainer: {fileID: 1596765941}
 --- !u!114 &1351030645

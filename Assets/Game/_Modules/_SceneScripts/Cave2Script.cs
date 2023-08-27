@@ -10,8 +10,6 @@ public class Cave2Script : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = FindObjectOfType<AudioSource>();
-
-        _audioSource.clip = _sadSong;
+        SoundManager.Instance.ChangeClip(_sadSong);
     }
 }
