@@ -5,12 +5,13 @@ using Sirenix.OdinInspector;
 
 public class ScreenshotManager : MonoBehaviour
 {
-    [SerializeField, HideInInspector] int quantity = 0;
+    [SerializeField, HideInInspector] int quantity = 1;
 
     [Button]
     public void TakeScreenShot()
     {
-        ScreenCapture.CaptureScreenshot(quantity.ToString());
+        ScreenCapture.CaptureScreenshot($"{quantity.ToString()}.png");
+        quantity++;
     }
 
     private void Awake()

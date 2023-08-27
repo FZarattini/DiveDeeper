@@ -124,3 +124,4 @@ MonoBehaviour:
   isAutoTrigger: 0
   _dialogue: {fileID: 11400000, guid: 340430895c8904a4692d9f12c48a76e8, type: 2}
   canShowDialogue: 0
+  autoDestroy: 0
