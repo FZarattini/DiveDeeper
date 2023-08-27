@@ -1435,7 +1435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637157316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.5755205, y: 6.5099998, z: -10}
+  m_LocalPosition: {x: 10.533848, y: 6.5099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3670,7 +3670,7 @@ MonoBehaviour:
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1804689140}
+        - m_Target: {fileID: 248622054}
           m_TargetAssemblyTypeName: RatDialogueTrigger, Assembly-CSharp
           m_MethodName: LoadScene
           m_Mode: 1
@@ -11078,6 +11078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8025561037074308178, guid: f6b256ed3a92a9e4aab7971d3c9ccb84, type: 3}
+    - {fileID: 4240218757805946377, guid: f6b256ed3a92a9e4aab7971d3c9ccb84, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3382964333766773036, guid: f6b256ed3a92a9e4aab7971d3c9ccb84, type: 3}
@@ -11099,17 +11100,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6452515016349529939, guid: f6b256ed3a92a9e4aab7971d3c9ccb84, type: 3}
   m_PrefabInstance: {fileID: 1804689138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1804689140 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4240218757805946377, guid: f6b256ed3a92a9e4aab7971d3c9ccb84, type: 3}
-  m_PrefabInstance: {fileID: 1804689138}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804689139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193585be663145745981ef4c96b12eea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1804689145
 BoxCollider2D:
   m_ObjectHideFlags: 0

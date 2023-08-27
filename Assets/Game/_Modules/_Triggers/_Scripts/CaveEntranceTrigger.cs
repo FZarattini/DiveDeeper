@@ -26,4 +26,9 @@ public class CaveEntranceTrigger : MonoBehaviour, IInteractables
         caveEntranceMask.SetActive(true);
         player.DOJump(caveJumpEndPoint.position, 2f, 1, 1.2f).SetEase(Ease.InQuad).OnComplete(() => container.Show());
     }
+
+    public void LoadCaveScene()
+    {
+        SceneManager.LoadScene("Cave");
+    }
 }
