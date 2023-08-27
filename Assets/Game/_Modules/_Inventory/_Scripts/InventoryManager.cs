@@ -42,6 +42,18 @@ public class InventoryManager : MonoBehaviour
         slot?.RemoveItem();
     }
 
+    public void ClearInventoryExceptCheese()
+    {
+        foreach(InventorySlot slot in slots)
+        {
+            if(slot.ItemInSlot != null && slot.ItemInSlot.name != "Cheese")
+            {
+
+                slot.RemoveItem();
+            }
+        }
+    }
+
     private InventorySlot GetEmptySlot()
     {
         foreach (InventorySlot slot in slots)

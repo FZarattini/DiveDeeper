@@ -63,10 +63,15 @@ public class DialogueManager : MonoBehaviour
 
         _dialogueContainer.Show();
 
-        if (!dialogue.completed)
+        if (dialogue.completed && dialogue.canRepeat)
+        {
+            dialogueIndex = 0;
+        }
+
+        /*if (!dialogue.completed)
             dialogueIndex = 0;
         else
-            dialogueIndex = dialogue.dialogueText.Count - 1;
+            dialogueIndex = dialogue.dialogueText.Count - 1;*/
 
         if (dialogue.character != Characters.None)
         {

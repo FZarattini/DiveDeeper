@@ -10,6 +10,7 @@ public class DialogueSO : ScriptableObject
     public List<string> dialogueText;
     public float writeSpeed;
     [ReadOnly] public bool completed = false;
+    public bool canRepeat = false;
 
     private void OnEnable()
     {
