@@ -11,7 +11,6 @@ public class CaveScript : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.clip = _clip;
+        SoundManager.Instance.ChangeClip(_clip);
     }
 }

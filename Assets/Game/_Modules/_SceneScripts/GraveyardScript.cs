@@ -14,8 +14,7 @@ public class GraveyardScript : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.clip = _sadSong;
+        //SoundManager.Instance.ChangeClip(_sadSong);
     }
 
     public void PlayDialogue()
